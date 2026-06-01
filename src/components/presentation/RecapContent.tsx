@@ -3,7 +3,7 @@ const werkLogo = werkLogoReverse.url;
 import { 
   Heart, Trophy, BarChart3, MessageSquare, Gift, Clock,
   TrendingDown, UserX, ArrowRight, ArrowUp, CheckCircle2, Sparkles,
-  Star, Award, TrendingUp
+  Star, Award, TrendingUp, Bot
 } from 'lucide-react';
 
 const questions = [
