@@ -19,3 +19,4 @@ export { Slide19Serving } from './Slide19Serving';
 export { Slide20Training } from './Slide20Training';
 export { Slide21Rewards } from './Slide21Rewards';
 export { Slide22CTA } from './Slide22CTA';
+export { SlideCostComparison } from './SlideCostComparison';
