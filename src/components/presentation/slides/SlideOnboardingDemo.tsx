@@ -25,7 +25,6 @@ const screens = [
   { id: "detail_live", label: "Live Activity" },
   { id: "manager", label: "Dashboard" },
   { id: "manager_detail", label: "Employee Detail" },
-  { id: "admin", label: "Setup" },
   { id: "notifications", label: "Alerts" },
 ];
 
