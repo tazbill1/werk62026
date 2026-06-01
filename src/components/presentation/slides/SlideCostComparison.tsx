@@ -28,9 +28,10 @@ export const SlideCostComparison = () => {
   }, [employees, turnoverRate]);
 
   const leftStats = [
-    { label: 'Industry Turnover Rate', value: '42%' },
-    { label: 'Average Replacement Cost', value: '150% of salary' },
-    { label: 'Annual Cost Per Store', value: '$500,000+' },
+    { label: 'Industry-Wide Turnover (2024)', value: '42%' },
+    { label: 'Non-Luxury Store Turnover', value: '45%' },
+    { label: 'Sales Consultant Turnover (Non-Luxury)', value: '73%' },
+    { label: 'Annual Industry Cost', value: '$20B+' },
   ];
 
   const rightStats = [
