@@ -66,67 +66,98 @@ export const SlideHelpMe = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex justify-center"
           >
-            <div className="w-[260px] bg-werk-dark rounded-[28px] p-2 shadow-2xl">
-              <div className="rounded-[22px] overflow-hidden bg-gradient-to-b from-werk-navy to-werk-dark p-3">
-                <div className="text-center mb-3">
-                  <span className="text-white text-sm font-bold tracking-wide">
-                    werk<span className="font-normal opacity-80">and</span>me
-                  </span>
-                </div>
-
-                <div className="flex justify-around items-center mb-3">
-                  <div className="text-center">
-                    <div className="text-werk-lime font-bold">100</div>
-                    <div className="text-white/50 text-[8px]">Points to Give</div>
+            <div className="w-[280px] bg-werk-dark rounded-[32px] p-2 shadow-2xl border border-white/10">
+              <div className="rounded-[26px] overflow-hidden bg-gradient-to-b from-werk-navy to-werk-dark">
+                {/* Chat header */}
+                <div className="px-4 pt-4 pb-3 border-b border-white/10 flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-full bg-werk-cyan/20 border border-werk-cyan/40 flex items-center justify-center">
+                    <Bot className="w-5 h-5 text-werk-cyan" />
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-werk-blue border-2 border-werk-lime flex items-center justify-center text-xl">👤</div>
-                  <div className="text-center">
-                    <div className="text-werk-lime font-bold">280</div>
-                    <div className="text-white/50 text-[8px]">Points to Spend</div>
-                  </div>
-                </div>
-
-                <div className="space-y-1.5">
-                  {[
-                    { name: 'challenge', sub: 'Contests' },
-                    { name: 'notice', sub: 'Recognition' },
-                    { name: 'go', sub: 'Rewards' },
-                    { name: 'serve', sub: 'Events', you: true },
-                    { name: 'grow', sub: 'Growth' },
-                    { name: 'ask', sub: 'Surveys' },
-                  ].map((m) => (
-                    <div key={m.name} className="bg-werk-cyan/10 border border-werk-cyan/15 rounded-md px-2 py-1.5 flex items-center gap-2">
-                      <div className="w-5 h-5 rounded-full bg-werk-lime" />
-                      <div>
-                        <div className="text-white text-[10px] font-bold">
-                          {m.name}<span className="text-werk-lime">{m.you ? 'you' : 'me'}</span>
-                        </div>
-                        <div className="text-white/50 text-[8px]">{m.sub}</div>
-                      </div>
+                  <div className="flex-1">
+                    <div className="text-white text-[12px] font-bold leading-tight">
+                      help<span className="text-werk-lime">me</span>
                     </div>
-                  ))}
-
-                  <div className="bg-werk-lime rounded-md py-1.5 text-center">
-                    <div className="text-werk-dark text-[10px] font-bold">Onboarding</div>
+                    <div className="flex items-center gap-1 text-[9px] text-white/50">
+                      <span className="w-1.5 h-1.5 rounded-full bg-werk-lime animate-pulse" />
+                      Online · AI HR Assistant
+                    </div>
                   </div>
+                </div>
 
-                  {/* helpMe highlighted */}
+                {/* Chat messages */}
+                <div className="p-3 space-y-2.5 min-h-[320px]">
                   <motion.div
-                    animate={{ boxShadow: ['0 0 0 rgba(57,189,225,0)', '0 0 20px rgba(57,189,225,0.4)', '0 0 0 rgba(57,189,225,0)'] }}
-                    transition={{ duration: 2.5, repeat: Infinity }}
-                    className="bg-werk-cyan/20 border-2 border-werk-cyan/50 rounded-md px-2 py-1.5 flex items-center gap-2 relative"
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="flex justify-end"
                   >
-                    <div className="w-5 h-5 rounded-full bg-werk-lime flex items-center justify-center">
-                      <Bot className="w-3 h-3 text-werk-dark" />
-                    </div>
-                    <div>
-                      <div className="text-white text-[10px] font-bold">
-                        help<span className="text-werk-lime">me</span>
+                    <div className="bg-werk-cyan text-werk-dark rounded-2xl rounded-br-md px-3 py-2 max-w-[80%]">
+                      <div className="text-[10px] font-medium leading-snug">
+                        How many PTO days do I have left this year?
                       </div>
-                      <div className="text-white/50 text-[8px]">AI HR Assistant</div>
                     </div>
-                    <span className="absolute right-2 top-1/2 -translate-y-1/2 bg-werk-cyan text-white text-[7px] font-bold px-1.5 py-0.5 rounded">AI</span>
                   </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 }}
+                    className="flex justify-start"
+                  >
+                    <div className="bg-white/10 text-white rounded-2xl rounded-bl-md px-3 py-2 max-w-[85%]">
+                      <div className="text-[10px] leading-snug">
+                        You have <span className="text-werk-lime font-bold">7 PTO days</span> remaining for 2026. Requests need 2 weeks notice through your manager.
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.4 }}
+                    className="flex justify-end"
+                  >
+                    <div className="bg-werk-cyan text-werk-dark rounded-2xl rounded-br-md px-3 py-2 max-w-[80%]">
+                      <div className="text-[10px] font-medium leading-snug">
+                        What's the dress code on Saturdays?
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.9 }}
+                    className="flex justify-start"
+                  >
+                    <div className="bg-white/10 text-white rounded-2xl rounded-bl-md px-3 py-2 max-w-[85%]">
+                      <div className="text-[10px] leading-snug">
+                        Saturdays are business casual — polo with dealership logo and clean slacks. No jeans on the showroom floor.
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2.5 }}
+                    className="flex justify-start"
+                  >
+                    <div className="bg-white/10 rounded-2xl rounded-bl-md px-3 py-2 flex gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/60 animate-bounce" style={{ animationDelay: '0ms' }} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/60 animate-bounce" style={{ animationDelay: '150ms' }} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/60 animate-bounce" style={{ animationDelay: '300ms' }} />
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Input */}
+                <div className="px-3 pb-3 pt-2 border-t border-white/10">
+                  <div className="bg-white/5 border border-white/10 rounded-full px-3 py-1.5 flex items-center gap-2">
+                    <MessageSquare className="w-3 h-3 text-white/40" />
+                    <span className="text-[9px] text-white/40">Ask anything...</span>
+                  </div>
                 </div>
               </div>
             </div>
