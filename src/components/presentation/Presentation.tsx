@@ -36,6 +36,7 @@ const slideComponents = [
   // Close Sequence
   Slides.Slide13Implementation,
   Slides.Slide22CTA,
+  Slides.SlideThankYou,
 ];
 
 export const Presentation = () => {
