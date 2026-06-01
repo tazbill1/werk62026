@@ -50,8 +50,8 @@ export const Slide12ProvenResults = () => {
                 <div className="flex flex-col items-center justify-center h-full">
                   <div className="text-white/60 text-sm font-medium mb-4">{result.label}</div>
                   <div className="flex items-center gap-2 text-werk-lime">
-                    <ArrowUp className="w-8 h-8" />
-                    <span className="text-5xl md:text-6xl font-bold">26%</span>
+                    {!(result as any).noArrow && <ArrowUp className="w-8 h-8" />}
+                    <span className="text-5xl md:text-6xl font-bold">{result.change}</span>
                   </div>
                 </div>
               ) : (
