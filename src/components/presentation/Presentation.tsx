@@ -10,6 +10,7 @@ const slideComponents = [
   Slides.Slide00Cover,
   Slides.SlideThreeQuestions,
   Slides.SlideDataInput,
+  Slides.SlideCostComparison,
   
   // Problem & Why
   Slides.SlideDoubleDrain,
