@@ -39,15 +39,6 @@ export const Slide15EmotionalCheckins = () => {
                 </div>
               </div>
               
-              <div className="flex items-center gap-4 bg-white/5 rounded-xl px-5 py-4 border border-white/10">
-                <div className="w-10 h-10 rounded-full bg-werk-cyan/20 flex items-center justify-center">
-                  <span className="text-lg">🔔</span>
-                </div>
-                <div>
-                  <div className="font-medium text-white">Manager Alerts</div>
-                  <div className="text-white/60 text-sm">Get notified when someone needs support</div>
-                </div>
-              </div>
               
               <div className="flex items-center gap-4 bg-white/5 rounded-xl px-5 py-4 border border-white/10">
                 <div className="w-10 h-10 rounded-full bg-werk-blue/20 flex items-center justify-center">
