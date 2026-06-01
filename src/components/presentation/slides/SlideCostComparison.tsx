@@ -57,17 +57,20 @@ export const SlideCostComparison = () => {
               border: `1px solid ${ULTRA}66`,
             }}
           >
-            {/* Left card */}
+            {/* Left card - NADA 2025 Data */}
             <div
               className="p-8 md:border-r"
               style={{ borderColor: `${ULTRA}66` }}
             >
               <h3
-                className="text-2xl mb-6"
+                className="text-2xl mb-2"
                 style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
               >
-                The Cost of Turnover
+                NADA 2025 Workforce Study
               </h3>
+              <p className="text-sm mb-6" style={{ color: MUTED }}>
+                2024 calendar year data · 2,500+ dealerships · 246,000 payroll records
+              </p>
               <div className="space-y-5">
                 {leftStats.map((s) => (
                   <div key={s.label}>
@@ -84,7 +87,7 @@ export const SlideCostComparison = () => {
                 ))}
               </div>
               <p className="text-xs mt-8 italic" style={{ color: MUTED }}>
-                Source: NADA Dealership Workforce Study
+                Source: NADA Dealership Workforce Study (2025 Report)
               </p>
             </div>
 
