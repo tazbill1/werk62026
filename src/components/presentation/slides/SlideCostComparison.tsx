@@ -31,7 +31,6 @@ export const SlideCostComparison = () => {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap');`}</style>
       <div
         className="w-full h-full flex items-center justify-center px-4 py-3 overflow-hidden"
         style={{ backgroundColor: MIDNIGHT, fontFamily: 'Inter, sans-serif' }}
@@ -52,7 +51,7 @@ export const SlideCostComparison = () => {
             >
               <h3
                 className="text-lg mb-1"
-                style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
+                style={{ color: '#FFFFFF' }}
               >
                 NADA 2025 Workforce Study
               </h3>
@@ -84,7 +83,6 @@ export const SlideCostComparison = () => {
               {/* Headline */}
               <h3
                 className="text-base md:text-lg font-bold leading-snug mb-1"
-                style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 <span style={{ color: SAPPHIRE }}>42%</span>
                 <span style={{ color: '#FFFFFF' }}> Leave. </span>
@@ -157,7 +155,7 @@ export const SlideCostComparison = () => {
           >
             <h3
               className="text-lg mb-0.5"
-              style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
+              style={{ color: '#FFFFFF' }}
             >
               What This Means for Your Store
             </h3>
