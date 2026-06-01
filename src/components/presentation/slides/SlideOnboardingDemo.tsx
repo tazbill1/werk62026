@@ -392,7 +392,7 @@ function NotiScreen() {
 const SCREEN_MAP: Record<string, React.FC> = {
   home: HomeScreen, phases: PhasesScreen, tasks: TaskListScreen,
   detail_video: VideoTaskScreen, detail_quiz: QuizScreen, detail_live: LiveScreen,
-  manager: MgrDash, manager_detail: MgrDetail, admin: AdminScreen, notifications: NotiScreen,
+  manager: MgrDash, manager_detail: MgrDetail, notifications: NotiScreen,
 };
 
 const groups = [
