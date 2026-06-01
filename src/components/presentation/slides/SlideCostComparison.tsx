@@ -47,26 +47,26 @@ export const SlideCostComparison = () => {
           >
             {/* Left card - NADA 2025 Data */}
             <div
-              className="p-8 md:border-r"
+              className="p-6 md:border-r"
               style={{ borderColor: `${ULTRA}66` }}
             >
               <h3
-                className="text-2xl mb-2"
+                className="text-xl mb-1"
                 style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
               >
                 NADA 2025 Workforce Study
               </h3>
-              <p className="text-sm mb-6" style={{ color: MUTED }}>
+              <p className="text-xs mb-4" style={{ color: MUTED }}>
                 2024 calendar year data · 2,500+ dealerships · 246,000 payroll records
               </p>
-              <div className="space-y-5">
+              <div className="space-y-3">
                 {leftStats.map((s) => (
                   <div key={s.label}>
-                    <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
+                    <p className="text-[11px] uppercase tracking-wider" style={{ color: MUTED }}>
                       {s.label}
                     </p>
                     <p
-                      className="text-3xl md:text-4xl font-bold mt-1"
+                      className="text-2xl md:text-3xl font-bold mt-0.5"
                       style={{ color: CHARTREUSE }}
                     >
                       {s.value}
@@ -74,7 +74,7 @@ export const SlideCostComparison = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-xs mt-8 italic" style={{ color: MUTED }}>
+              <p className="text-[11px] mt-5 italic" style={{ color: MUTED }}>
                 Source: NADA Dealership Workforce Study (2025 Report)
               </p>
             </div>
