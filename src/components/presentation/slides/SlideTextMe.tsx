@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import { MessageSquareText, Sparkles, Users } from 'lucide-react';
-import textmeConversation from '@/assets/textme-conversation.png.asset.json';
 
 export const SlideTextMe = () => {
   const audiences = [
@@ -84,7 +83,7 @@ export const SlideTextMe = () => {
             </div>
           </motion.div>
 
-          {/* Screenshot */}
+          {/* Animated SMS conversation: Day-7 onboarding check-in */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,13 +92,48 @@ export const SlideTextMe = () => {
           >
             <div className="relative">
               <div className="absolute -inset-3 gradient-werk rounded-3xl opacity-20 blur-xl" />
-              <img
-                src={textmeConversation.url}
-                alt="TextMe AI HR agent conversation"
-                className="relative rounded-2xl shadow-2xl border border-white/10 max-h-[420px] object-contain"
-              />
+              <div className="relative bg-card rounded-2xl shadow-2xl border border-white/10 p-4 w-[300px]">
+                <div className="flex items-center justify-between mb-3 pb-2 border-b border-border/40">
+                  <div className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full gradient-werk flex items-center justify-center text-[10px] font-bold text-white">AI</div>
+                    <div>
+                      <div className="text-xs font-semibold text-foreground">WerkandMe</div>
+                      <div className="text-[10px] text-muted-foreground">Day 7 check-in</div>
+                    </div>
+                  </div>
+                  <MessageSquareText className="w-4 h-4 text-primary" />
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { from: 'ai', text: "Hey Marcus — you've wrapped your first week as a tech. How's it actually going?" },
+                    { from: 'user', text: "Pretty good. Bay setup is solid. Just a lot of names to remember 😅" },
+                    { from: 'ai', text: "Totally normal. Anything missing that would've made week 1 easier?" },
+                    { from: 'user', text: "Honestly, a quick walkthrough of the parts system. Felt lost ordering my first job." },
+                    { from: 'ai', text: "Good signal — I'll flag that to your service manager and add a parts tutorial to your week 2 plan." },
+                  ].map((m, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 + i * 0.35 }}
+                      className={`flex ${m.from === 'user' ? 'justify-end' : 'justify-start'}`}
+                    >
+                      <div
+                        className={`max-w-[85%] rounded-2xl px-3 py-1.5 text-[11px] leading-snug ${
+                          m.from === 'user'
+                            ? 'bg-primary text-primary-foreground rounded-br-sm'
+                            : 'bg-muted text-foreground rounded-bl-sm'
+                        }`}
+                      >
+                        {m.text}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
+
 
           {/* Use cases */}
           <motion.div
