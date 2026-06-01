@@ -29,12 +29,14 @@ export const Slide18Recognition = () => {
             
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="bg-card rounded-xl p-4 border shadow-sm text-center">
-                <div className="text-4xl font-bold text-gradient-werk">89%</div>
-                <div className="text-sm text-muted-foreground mt-1">Feel more valued</div>
+                <div className="text-4xl font-bold text-gradient-werk">+20%</div>
+                <div className="text-sm text-muted-foreground mt-1">Higher retention with peer recognition</div>
+                <div className="text-[10px] text-muted-foreground/70 mt-1">BI Worldwide, 2024</div>
               </div>
               <div className="bg-card rounded-xl p-4 border shadow-sm text-center">
-                <div className="text-4xl font-bold text-gradient-werk">3.2x</div>
-                <div className="text-sm text-muted-foreground mt-1">More likely to stay</div>
+                <div className="text-4xl font-bold text-gradient-werk">4x</div>
+                <div className="text-sm text-muted-foreground mt-1">More likely to be engaged when recognized</div>
+                <div className="text-[10px] text-muted-foreground/70 mt-1">Gallup × Workhuman</div>
               </div>
             </div>
             
