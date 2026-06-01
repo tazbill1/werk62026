@@ -33,10 +33,10 @@ export const SlideCostComparison = () => {
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap');`}</style>
       <div
-        className="w-full min-h-full flex items-center justify-center p-6"
+        className="w-full h-full flex items-center justify-center px-4 py-3 overflow-hidden"
         style={{ backgroundColor: MIDNIGHT, fontFamily: 'Inter, sans-serif' }}
       >
-        <div className="w-full max-w-[1200px] mx-auto space-y-4">
+        <div className="w-full max-w-[1200px] mx-auto space-y-2">
           {/* Row 1 */}
           <div
             className="grid grid-cols-1 md:grid-cols-2 rounded-xl overflow-hidden"
@@ -47,26 +47,26 @@ export const SlideCostComparison = () => {
           >
             {/* Left card - NADA 2025 Data */}
             <div
-              className="p-6 md:border-r"
+              className="p-4 md:border-r"
               style={{ borderColor: `${ULTRA}66` }}
             >
               <h3
-                className="text-xl mb-1"
+                className="text-lg mb-1"
                 style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
               >
                 NADA 2025 Workforce Study
               </h3>
-              <p className="text-xs mb-4" style={{ color: MUTED }}>
+              <p className="text-[10px] mb-3" style={{ color: MUTED }}>
                 2024 calendar year data · 2,500+ dealerships · 246,000 payroll records
               </p>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {leftStats.map((s) => (
                   <div key={s.label}>
-                    <p className="text-[11px] uppercase tracking-wider" style={{ color: MUTED }}>
+                    <p className="text-[10px] uppercase tracking-wider" style={{ color: MUTED }}>
                       {s.label}
                     </p>
                     <p
-                      className="text-2xl md:text-3xl font-bold mt-0.5"
+                      className="text-xl md:text-2xl font-bold mt-0.5"
                       style={{ color: CHARTREUSE }}
                     >
                       {s.value}
@@ -74,16 +74,16 @@ export const SlideCostComparison = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-[11px] mt-5 italic" style={{ color: MUTED }}>
+              <p className="text-[10px] mt-3 italic" style={{ color: MUTED }}>
                 Source: NADA Dealership Workforce Study (2025 Report)
               </p>
             </div>
 
             {/* Right card */}
-            <div className="p-6">
+            <div className="p-4">
               {/* Headline */}
               <h3
-                className="text-xl md:text-2xl font-bold leading-snug mb-2"
+                className="text-base md:text-lg font-bold leading-snug mb-1"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 <span style={{ color: SAPPHIRE }}>42%</span>
@@ -93,124 +93,112 @@ export const SlideCostComparison = () => {
               </h3>
 
               {/* Subhead */}
-              <p className="text-xs mb-3" style={{ color: MUTED }}>
+              <p className="text-[11px] mb-2" style={{ color: MUTED }}>
                 Turnover gets counted. Disengagement gets ignored. Both are costing you.
               </p>
 
               {/* Stat blocks */}
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <div
-                  className="rounded-lg p-3"
+                  className="rounded-lg p-2"
                   style={{ backgroundColor: `${MIDNIGHT}cc`, border: `1px solid ${ULTRA}66` }}
                 >
-                  <p className="text-2xl md:text-3xl font-bold" style={{ color: CHARTREUSE }}>1 in 3</p>
-                  <p className="text-xs text-white mt-0.5">
+                  <p className="text-xl md:text-2xl font-bold" style={{ color: CHARTREUSE }}>1 in 3</p>
+                  <p className="text-[11px] text-white mt-0.5">
                     dealership employees say they're not engaged or excited about their job
                   </p>
-                  <p className="text-[10px] italic mt-1" style={{ color: MUTED }}>
+                  <p className="text-[9px] italic mt-0.5" style={{ color: MUTED }}>
                     Cox Automotive Dealership Staffing Study
                   </p>
                 </div>
 
                 <div
-                  className="rounded-lg p-3"
+                  className="rounded-lg p-2"
                   style={{ backgroundColor: `${MIDNIGHT}cc`, border: `1px solid ${ULTRA}66` }}
                 >
-                  <p className="text-2xl md:text-3xl font-bold" style={{ color: SAPPHIRE }}>59%</p>
-                  <p className="text-xs text-white mt-0.5">
+                  <p className="text-xl md:text-2xl font-bold" style={{ color: SAPPHIRE }}>59%</p>
+                  <p className="text-[11px] text-white mt-0.5">
                     of the workforce is filling a seat and watching the clock — doing the minimum, psychologically checked out
                   </p>
-                  <p className="text-[10px] italic mt-1" style={{ color: MUTED }}>
+                  <p className="text-[9px] italic mt-0.5" style={{ color: MUTED }}>
                     Gallup State of the Global Workplace
                   </p>
                 </div>
 
                 <div
-                  className="rounded-lg p-3"
+                  className="rounded-lg p-2"
                   style={{ backgroundColor: `${MIDNIGHT}cc`, border: `1px solid ${ULTRA}66` }}
                 >
-                  <p className="text-2xl md:text-3xl font-bold" style={{ color: '#FFFFFF' }}>34% of salary</p>
-                  <p className="text-xs text-white mt-0.5">
+                  <p className="text-xl md:text-2xl font-bold" style={{ color: '#FFFFFF' }}>34% of salary</p>
+                  <p className="text-[11px] text-white mt-0.5">
                     lost per disengaged employee per year in productivity
                   </p>
-                  <p className="text-[10px] italic mt-1" style={{ color: MUTED }}>Gallup</p>
+                  <p className="text-[9px] italic mt-0.5" style={{ color: MUTED }}>Gallup</p>
                 </div>
               </div>
 
               {/* Bottom callout */}
-              <div className="rounded-lg p-3 mt-3" style={{ backgroundColor: '#252a55' }}>
-                <p className="text-xs italic" style={{ color: MUTED }}>
+              <div className="rounded-lg p-2 mt-2" style={{ backgroundColor: '#252a55' }}>
+                <p className="text-[11px] italic" style={{ color: MUTED }}>
                   "39% of managers haven't noticed their employee's performance has already dropped."
                 </p>
-                <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>— Gallup</p>
+                <p className="text-[10px] mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>— Gallup</p>
               </div>
             </div>
           </div>
 
           {/* Row 2 - personalized from slide 3 inputs */}
           <div
-            className="rounded-xl p-6"
+            className="rounded-xl p-4"
             style={{
               backgroundColor: `${ULTRA}33`,
               borderTop: `2px solid ${CHARTREUSE}`,
             }}
           >
             <h3
-              className="text-xl mb-1"
+              className="text-lg mb-0.5"
               style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
             >
               What This Means for Your Store
             </h3>
-            <p className="text-xs mb-5" style={{ color: MUTED }}>
+            <p className="text-[11px] mb-3" style={{ color: MUTED }}>
               Based on the {fmt(data.employees)} employees you shared
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
               {/* Turnover % */}
               <div className="text-center">
-                <p className="text-[11px] uppercase tracking-wider mb-2" style={{ color: MUTED }}>
+                <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: MUTED }}>
                   Your annual turnover rate
                 </p>
-                <p className="text-5xl md:text-6xl font-black" style={{ color: SAPPHIRE }}>
+                <p className="text-4xl md:text-5xl font-black" style={{ color: SAPPHIRE }}>
                   {effectiveTurnoverRate}%
                 </p>
-                <p className="mt-2 text-xs" style={{ color: MUTED }}>
+                <p className="mt-1 text-[11px]" style={{ color: MUTED }}>
                   {fmt(employeesLost)} employees lost per year
                 </p>
               </div>
 
               {/* Estimated annual cost */}
               <div className="text-center">
-                <p className="text-[11px] uppercase tracking-wider mb-2" style={{ color: MUTED }}>
+                <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: MUTED }}>
                   Estimated annual cost
                 </p>
-                <p className="text-5xl md:text-6xl font-black" style={{ color: CHARTREUSE }}>
+                <p className="text-4xl md:text-5xl font-black" style={{ color: CHARTREUSE }}>
                   {fmtMoney(annualCost)}
                 </p>
-                <p className="mt-2 text-xs" style={{ color: MUTED }}>
+                <p className="mt-1 text-[11px]" style={{ color: MUTED }}>
                   {fmt(employeesLost)} × {fmtMoney(REPLACEMENT_COST)} to hire, train &amp; ramp
                 </p>
               </div>
             </div>
 
-            <div className="mt-5 pt-4 border-t text-center space-y-1" style={{ borderColor: `${ULTRA}66` }}>
-              <p className="text-[11px]" style={{ color: MUTED }}>
-                Assumes {fmtMoney(AVG_SALARY)} average salary and {fmtMoney(REPLACEMENT_COST)} replacement cost per employee.
-              </p>
-              <p className="text-[11px] italic" style={{ color: MUTED }}>
-                Source: NADA Dealership Workforce Study (2025 Report)
+            <div className="mt-2 pt-2 border-t text-center" style={{ borderColor: `${ULTRA}66` }}>
+              <p className="text-[10px] italic" style={{ color: MUTED }}>
+                Turnover is the fire alarm. Disengagement is the slow leak. Most dealerships only fix what's on fire.
               </p>
             </div>
           </div>
-
-
-          {/* Footer line */}
-          <p
-            className="text-center italic text-sm pt-2"
-            style={{ color: MUTED }}
-          >
-            Turnover is the fire alarm. Disengagement is the slow leak. Most dealerships only fix what's on fire.
-          </p>
         </div>
       </div>
     </>
