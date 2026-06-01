@@ -13,7 +13,6 @@ const slideComponents = [
   Slides.SlideCostComparison,
   
   // Problem & Why
-  Slides.SlideDoubleDrain,
   Slides.SlideWorkforceWants,
   Slides.SlideWhyEngage,
   Slides.Slide05NotTrustFalls,
