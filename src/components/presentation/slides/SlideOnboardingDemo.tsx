@@ -410,7 +410,6 @@ const descriptions: Record<string, string> = {
   detail_live: "Manager-verified live activity with pending approval state and two-way notes.",
   manager: "Manager dashboard with filters, approval alerts, and behind warnings.",
   manager_detail: "Drill-in view with approve/redo actions and phase progress.",
-  admin: "Template config with global toggles and drag-to-reorder task editor.",
   notifications: "SMS and email examples: short punchy texts, rich email with progress table.",
 };
 
