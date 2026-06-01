@@ -28,12 +28,6 @@ export const SlideCostComparison = () => {
     { label: 'Annual Industry Cost', value: '$20B+' },
   ];
 
-  const rightStats = [
-    { label: 'Employees Actively Disengaged', value: '17%' },
-    { label: 'Productivity Loss', value: '18% lower' },
-    { label: 'Profitability Impact', value: '21% lower' },
-    { label: 'Cost Per Disengaged Employee', value: '34% of salary' },
-  ];
 
   return (
     <>
