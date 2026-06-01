@@ -117,7 +117,7 @@ export const SlideCostComparison = () => {
             </div>
           </div>
 
-          {/* Row 2 */}
+          {/* Row 2 - personalized from slide 3 inputs */}
           <div
             className="rounded-xl p-8"
             style={{
@@ -126,133 +126,53 @@ export const SlideCostComparison = () => {
             }}
           >
             <h3
-              className="text-2xl mb-6"
+              className="text-2xl mb-2"
               style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
             >
               What This Means for Your Store
             </h3>
+            <p className="text-sm mb-8" style={{ color: MUTED }}>
+              Based on the {fmt(data.employees)} employees you shared
+            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Inputs */}
-              <div>
-                <p
-                  className="text-xs uppercase tracking-wider mb-4"
-                  style={{ color: MUTED }}
-                >
-                  Your store's numbers
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              {/* Turnover % */}
+              <div className="text-center">
+                <p className="text-xs uppercase tracking-wider mb-3" style={{ color: MUTED }}>
+                  Your annual turnover rate
                 </p>
-
-                <div className="space-y-4">
-                  <div>
-                    <label
-                      className="block text-sm mb-2"
-                      style={{ color: '#FFFFFF' }}
-                    >
-                      Number of employees
-                    </label>
-                    <input
-                      type="number"
-                      min={1}
-                      value={employees}
-                      onChange={(e) => setEmployees(Math.max(0, Number(e.target.value) || 0))}
-                      className="w-full px-4 py-3 rounded-lg outline-none transition-all"
-                      style={{
-                        backgroundColor: MIDNIGHT,
-                        color: '#FFFFFF',
-                        border: `1px solid ${ULTRA}`,
-                        boxShadow: 'none',
-                      }}
-                      onFocus={(e) => {
-                        e.currentTarget.style.boxShadow = `0 0 0 2px ${SAPPHIRE}`;
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      className="block text-sm mb-2"
-                      style={{ color: '#FFFFFF' }}
-                    >
-                      Current turnover rate %
-                    </label>
-                    <input
-                      type="number"
-                      min={0}
-                      max={100}
-                      value={turnoverRate}
-                      onChange={(e) => setTurnoverRate(Math.max(0, Math.min(100, Number(e.target.value) || 0)))}
-                      className="w-full px-4 py-3 rounded-lg outline-none transition-all"
-                      style={{
-                        backgroundColor: MIDNIGHT,
-                        color: '#FFFFFF',
-                        border: `1px solid ${ULTRA}`,
-                      }}
-                      onFocus={(e) => {
-                        e.currentTarget.style.boxShadow = `0 0 0 2px ${SAPPHIRE}`;
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
-                    />
-                  </div>
-                </div>
+                <p className="text-7xl md:text-8xl font-black" style={{ color: SAPPHIRE }}>
+                  {effectiveTurnoverRate}%
+                </p>
+                <p className="mt-3 text-sm" style={{ color: MUTED }}>
+                  {fmt(employeesLost)} employees lost per year
+                </p>
               </div>
 
-              {/* Output */}
-              <div className="space-y-5">
-                <div>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Employees lost per year
-                  </p>
-                  <p className="text-2xl font-semibold" style={{ color: '#FFFFFF' }}>
-                    {fmt(calc.lost)}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Annual turnover cost
-                  </p>
-                  <p className="text-4xl font-bold" style={{ color: CHARTREUSE }}>
-                    {fmtMoney(calc.turnoverCost)}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Disengaged employees still on payroll
-                  </p>
-                  <p className="text-2xl font-semibold" style={{ color: '#FFFFFF' }}>
-                    {fmt(calc.disengaged)}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Cost of disengagement
-                  </p>
-                  <p className="text-4xl font-bold" style={{ color: SAPPHIRE }}>
-                    {fmtMoney(calc.disengagementCost)}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t" style={{ borderColor: `${ULTRA}66` }}>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Combined annual drag
-                  </p>
-                  <p
-                    className="text-5xl md:text-6xl font-extrabold"
-                    style={{ color: '#FFFFFF' }}
-                  >
-                    {fmtMoney(calc.combined)}
-                  </p>
-                </div>
+              {/* Estimated annual cost */}
+              <div className="text-center">
+                <p className="text-xs uppercase tracking-wider mb-3" style={{ color: MUTED }}>
+                  Estimated annual cost
+                </p>
+                <p className="text-6xl md:text-7xl font-black" style={{ color: CHARTREUSE }}>
+                  {fmtMoney(annualCost)}
+                </p>
+                <p className="mt-3 text-sm" style={{ color: MUTED }}>
+                  {fmt(employeesLost)} × {fmtMoney(REPLACEMENT_COST)} to hire, train &amp; ramp
+                </p>
               </div>
             </div>
+
+            <div className="mt-8 pt-6 border-t text-center space-y-1" style={{ borderColor: `${ULTRA}66` }}>
+              <p className="text-xs" style={{ color: MUTED }}>
+                Assumes {fmtMoney(AVG_SALARY)} average salary and {fmtMoney(REPLACEMENT_COST)} replacement cost per employee.
+              </p>
+              <p className="text-xs italic" style={{ color: MUTED }}>
+                Source: NADA Dealership Workforce Study (2025 Report)
+              </p>
+            </div>
           </div>
+
 
           {/* Footer line */}
           <p
