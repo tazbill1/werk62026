@@ -94,7 +94,7 @@ export const SlideHelpMe = () => {
                   >
                     <div className="bg-werk-cyan text-werk-dark rounded-2xl rounded-br-md px-3 py-2 max-w-[80%]">
                       <div className="text-[10px] font-medium leading-snug">
-                        How many PTO days do I have left this year?
+                        What's our bereavement leave policy?
                       </div>
                     </div>
                   </motion.div>
@@ -107,7 +107,7 @@ export const SlideHelpMe = () => {
                   >
                     <div className="bg-white/10 text-white rounded-2xl rounded-bl-md px-3 py-2 max-w-[85%]">
                       <div className="text-[10px] leading-snug">
-                        You have <span className="text-werk-lime font-bold">7 PTO days</span> remaining for 2026. Requests need 2 weeks notice through your manager.
+                        We offer <span className="text-werk-lime font-bold">up to 3 days</span> of paid bereavement leave for immediate family. Notify your manager as soon as possible and HR will send you the leave form.
                       </div>
                     </div>
                   </motion.div>
@@ -187,7 +187,7 @@ export const SlideHelpMe = () => {
 
             {tab === 'features' && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-2.5">
-                <FeatureCard icon={MessageSquare} title="Instant answers, any time" desc="Employees ask in plain language and get instant answers — PTO, dress code, benefits, returns. No waiting, no digging through handbooks." />
+                <FeatureCard icon={MessageSquare} title="Instant answers, any time" desc="Employees ask in plain language and get instant answers — dress code, benefits, policies, returns. No waiting, no digging through handbooks." />
                 <FeatureCard icon={Brain} title="Trained on your dealership" desc="helpMe only knows what your dealership teaches it. Upload handbooks, SOPs, policies, and FAQs — it learns your store, not generic answers." />
                 <FeatureCard icon={RefreshCw} title="Always up to date" desc="Update the knowledge base once and every employee gets the right answer immediately. No outdated binders or conflicting information." />
                 <FeatureCard icon={BarChart3} title="See what employees are asking" desc="Managers get visibility into common questions. If 15 people ask about the holiday schedule, that's a signal to communicate proactively." />
