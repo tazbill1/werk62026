@@ -149,55 +149,55 @@ export const SlideCostComparison = () => {
 
           {/* Row 2 - personalized from slide 3 inputs */}
           <div
-            className="rounded-xl p-8"
+            className="rounded-xl p-6"
             style={{
               backgroundColor: `${ULTRA}33`,
               borderTop: `2px solid ${CHARTREUSE}`,
             }}
           >
             <h3
-              className="text-2xl mb-2"
+              className="text-xl mb-1"
               style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
             >
               What This Means for Your Store
             </h3>
-            <p className="text-sm mb-8" style={{ color: MUTED }}>
+            <p className="text-xs mb-5" style={{ color: MUTED }}>
               Based on the {fmt(data.employees)} employees you shared
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               {/* Turnover % */}
               <div className="text-center">
-                <p className="text-xs uppercase tracking-wider mb-3" style={{ color: MUTED }}>
+                <p className="text-[11px] uppercase tracking-wider mb-2" style={{ color: MUTED }}>
                   Your annual turnover rate
                 </p>
-                <p className="text-7xl md:text-8xl font-black" style={{ color: SAPPHIRE }}>
+                <p className="text-5xl md:text-6xl font-black" style={{ color: SAPPHIRE }}>
                   {effectiveTurnoverRate}%
                 </p>
-                <p className="mt-3 text-sm" style={{ color: MUTED }}>
+                <p className="mt-2 text-xs" style={{ color: MUTED }}>
                   {fmt(employeesLost)} employees lost per year
                 </p>
               </div>
 
               {/* Estimated annual cost */}
               <div className="text-center">
-                <p className="text-xs uppercase tracking-wider mb-3" style={{ color: MUTED }}>
+                <p className="text-[11px] uppercase tracking-wider mb-2" style={{ color: MUTED }}>
                   Estimated annual cost
                 </p>
-                <p className="text-6xl md:text-7xl font-black" style={{ color: CHARTREUSE }}>
+                <p className="text-5xl md:text-6xl font-black" style={{ color: CHARTREUSE }}>
                   {fmtMoney(annualCost)}
                 </p>
-                <p className="mt-3 text-sm" style={{ color: MUTED }}>
+                <p className="mt-2 text-xs" style={{ color: MUTED }}>
                   {fmt(employeesLost)} × {fmtMoney(REPLACEMENT_COST)} to hire, train &amp; ramp
                 </p>
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t text-center space-y-1" style={{ borderColor: `${ULTRA}66` }}>
-              <p className="text-xs" style={{ color: MUTED }}>
+            <div className="mt-5 pt-4 border-t text-center space-y-1" style={{ borderColor: `${ULTRA}66` }}>
+              <p className="text-[11px]" style={{ color: MUTED }}>
                 Assumes {fmtMoney(AVG_SALARY)} average salary and {fmtMoney(REPLACEMENT_COST)} replacement cost per employee.
               </p>
-              <p className="text-xs italic" style={{ color: MUTED }}>
+              <p className="text-[11px] italic" style={{ color: MUTED }}>
                 Source: NADA Dealership Workforce Study (2025 Report)
               </p>
             </div>
