@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import werkLogoAsset from '@/assets/werkandme-logo-reverse.png.asset.json';
-import { Mail, Phone, Globe, Heart } from 'lucide-react';
+import { Globe, Heart } from 'lucide-react';
 
 export const SlideThankYou = () => {
   return (
