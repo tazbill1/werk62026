@@ -1,4 +1,7 @@
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
+import { motion } from 'framer-motion';
+import { useDealership } from '@/contexts/DealershipContext';
+import { SlideHeader } from '../SlideHeader';
 
 const MIDNIGHT = '#1E2248';
 const ULTRA = '#1A51A0';
@@ -7,269 +10,126 @@ const CHARTREUSE = '#DDDE40';
 const MUTED = 'rgba(255,255,255,0.6)';
 
 const AVG_SALARY = 60000;
-const REPLACEMENT_COST = 15000; // 25% of salary
-const DISENGAGED_RATE = 0.17;
-const DISENGAGED_COST_RATE = 0.34;
+const REPLACEMENT_COST = 15000;
 
 const fmt = (n: number) => n.toLocaleString();
 const fmtMoney = (n: number) => `$${Math.round(n).toLocaleString()}`;
 
 export const SlideCostComparison = () => {
-  const [employees, setEmployees] = useState(65);
-  const [turnoverRate, setTurnoverRate] = useState(42);
+  const { data, employeesLost, effectiveTurnoverRate } = useDealership();
 
-  const calc = useMemo(() => {
-    const lost = Math.round(employees * (turnoverRate / 100));
-    const turnoverCost = lost * REPLACEMENT_COST;
-    const disengaged = Math.round(employees * DISENGAGED_RATE);
-    const disengagementCost = Math.round(disengaged * AVG_SALARY * DISENGAGED_COST_RATE);
-    const combined = turnoverCost + disengagementCost;
-    return { lost, turnoverCost, disengaged, disengagementCost, combined };
-  }, [employees, turnoverRate]);
-
-  const leftStats = [
-    { label: 'Industry-Wide Turnover (2024)', value: '42%' },
-    { label: 'Non-Luxury Store Turnover', value: '45%' },
-    { label: 'Sales Consultant Turnover (Non-Luxury)', value: '73%' },
-    { label: 'Annual Industry Cost', value: '$20B+' },
-  ];
-
-  const rightStats = [
-    { label: 'Employees Actively Disengaged', value: '17%' },
-    { label: 'Productivity Loss', value: '18% lower' },
-    { label: 'Profitability Impact', value: '21% lower' },
-    { label: 'Cost Per Disengaged Employee', value: '34% of salary' },
-  ];
+  const annualCost = useMemo(
+    () => employeesLost * REPLACEMENT_COST,
+    [employeesLost]
+  );
 
   return (
-    <>
+    <div
+      className="relative w-full h-full flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: MIDNIGHT, fontFamily: 'Inter, sans-serif' }}
+    >
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap');`}</style>
-      <div
-        className="w-full min-h-full flex items-center justify-center p-8"
-        style={{ backgroundColor: MIDNIGHT, fontFamily: 'Inter, sans-serif' }}
-      >
-        <div className="w-full max-w-[1200px] mx-auto space-y-6">
-          {/* Row 1 */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 rounded-xl overflow-hidden"
+
+      {/* Ambient glow */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl" style={{ backgroundColor: CHARTREUSE }} />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-3xl" style={{ backgroundColor: SAPPHIRE }} />
+      </div>
+
+      <SlideHeader light />
+
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-8 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-10"
+        >
+          <p className="text-xs uppercase tracking-[0.2em] mb-3" style={{ color: SAPPHIRE }}>
+            Based on what you shared
+          </p>
+          <h2
+            className="text-3xl md:text-5xl font-bold text-white"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            Here's what turnover is <span style={{ color: CHARTREUSE }}>costing you</span>
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Turnover % card */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 }}
+            className="rounded-2xl p-10 text-center flex flex-col justify-center"
             style={{
-              backgroundColor: MIDNIGHT,
+              backgroundColor: `${ULTRA}33`,
               border: `1px solid ${ULTRA}66`,
             }}
           >
-            {/* Left card - NADA 2025 Data */}
-            <div
-              className="p-8 md:border-r"
-              style={{ borderColor: `${ULTRA}66` }}
+            <p className="text-xs uppercase tracking-wider mb-4" style={{ color: MUTED }}>
+              Your annual turnover rate
+            </p>
+            <motion.p
+              key={effectiveTurnoverRate}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="text-7xl md:text-8xl font-black"
+              style={{ color: SAPPHIRE }}
             >
-              <h3
-                className="text-2xl mb-2"
-                style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
-              >
-                NADA 2025 Workforce Study
-              </h3>
-              <p className="text-sm mb-6" style={{ color: MUTED }}>
-                2024 calendar year data · 2,500+ dealerships · 246,000 payroll records
-              </p>
-              <div className="space-y-5">
-                {leftStats.map((s) => (
-                  <div key={s.label}>
-                    <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                      {s.label}
-                    </p>
-                    <p
-                      className="text-3xl md:text-4xl font-bold mt-1"
-                      style={{ color: CHARTREUSE }}
-                    >
-                      {s.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs mt-8 italic" style={{ color: MUTED }}>
-                Source: NADA Dealership Workforce Study (2025 Report)
-              </p>
-            </div>
+              {effectiveTurnoverRate}%
+            </motion.p>
+            <p className="mt-4 text-white/70">
+              {fmt(employeesLost)} of {fmt(data.employees)} employees lost per year
+            </p>
+          </motion.div>
 
-            {/* Right card */}
-            <div className="p-8">
-              <h3
-                className="text-2xl mb-2"
-                style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
-              >
-                The Hidden Cost of Apathy
-              </h3>
-              <p className="text-sm mb-6" style={{ color: MUTED }}>
-                What happens when disengaged employees stay — and checked-out employees leave
-              </p>
-              <div className="space-y-5">
-                {rightStats.map((s) => (
-                  <div key={s.label}>
-                    <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                      {s.label}
-                    </p>
-                    <p
-                      className="text-3xl md:text-4xl font-bold mt-1"
-                      style={{ color: SAPPHIRE }}
-                    >
-                      {s.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs mt-8 italic" style={{ color: MUTED }}>
-                Source: Gallup State of the American Workplace
-              </p>
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div
-            className="rounded-xl p-8"
+          {/* Annual cost card */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="rounded-2xl p-10 text-center flex flex-col justify-center"
             style={{
               backgroundColor: `${ULTRA}33`,
-              borderTop: `2px solid ${CHARTREUSE}`,
+              border: `1px solid ${CHARTREUSE}66`,
+              borderTop: `3px solid ${CHARTREUSE}`,
             }}
           >
-            <h3
-              className="text-2xl mb-6"
-              style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
+            <p className="text-xs uppercase tracking-wider mb-4" style={{ color: MUTED }}>
+              Estimated annual cost
+            </p>
+            <motion.p
+              key={annualCost}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="text-6xl md:text-7xl font-black"
+              style={{ color: CHARTREUSE }}
             >
-              What This Means for Your Store
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Inputs */}
-              <div>
-                <p
-                  className="text-xs uppercase tracking-wider mb-4"
-                  style={{ color: MUTED }}
-                >
-                  Your store's numbers
-                </p>
-
-                <div className="space-y-4">
-                  <div>
-                    <label
-                      className="block text-sm mb-2"
-                      style={{ color: '#FFFFFF' }}
-                    >
-                      Number of employees
-                    </label>
-                    <input
-                      type="number"
-                      min={1}
-                      value={employees}
-                      onChange={(e) => setEmployees(Math.max(0, Number(e.target.value) || 0))}
-                      className="w-full px-4 py-3 rounded-lg outline-none transition-all"
-                      style={{
-                        backgroundColor: MIDNIGHT,
-                        color: '#FFFFFF',
-                        border: `1px solid ${ULTRA}`,
-                        boxShadow: 'none',
-                      }}
-                      onFocus={(e) => {
-                        e.currentTarget.style.boxShadow = `0 0 0 2px ${SAPPHIRE}`;
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      className="block text-sm mb-2"
-                      style={{ color: '#FFFFFF' }}
-                    >
-                      Current turnover rate %
-                    </label>
-                    <input
-                      type="number"
-                      min={0}
-                      max={100}
-                      value={turnoverRate}
-                      onChange={(e) => setTurnoverRate(Math.max(0, Math.min(100, Number(e.target.value) || 0)))}
-                      className="w-full px-4 py-3 rounded-lg outline-none transition-all"
-                      style={{
-                        backgroundColor: MIDNIGHT,
-                        color: '#FFFFFF',
-                        border: `1px solid ${ULTRA}`,
-                      }}
-                      onFocus={(e) => {
-                        e.currentTarget.style.boxShadow = `0 0 0 2px ${SAPPHIRE}`;
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Output */}
-              <div className="space-y-5">
-                <div>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Employees lost per year
-                  </p>
-                  <p className="text-2xl font-semibold" style={{ color: '#FFFFFF' }}>
-                    {fmt(calc.lost)}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Annual turnover cost
-                  </p>
-                  <p className="text-4xl font-bold" style={{ color: CHARTREUSE }}>
-                    {fmtMoney(calc.turnoverCost)}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Disengaged employees still on payroll
-                  </p>
-                  <p className="text-2xl font-semibold" style={{ color: '#FFFFFF' }}>
-                    {fmt(calc.disengaged)}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Cost of disengagement
-                  </p>
-                  <p className="text-4xl font-bold" style={{ color: SAPPHIRE }}>
-                    {fmtMoney(calc.disengagementCost)}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t" style={{ borderColor: `${ULTRA}66` }}>
-                  <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                    Combined annual drag
-                  </p>
-                  <p
-                    className="text-5xl md:text-6xl font-extrabold"
-                    style={{ color: '#FFFFFF' }}
-                  >
-                    {fmtMoney(calc.combined)}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer line */}
-          <p
-            className="text-center italic text-sm pt-2"
-            style={{ color: MUTED }}
-          >
-            Turnover is the fire alarm. Disengagement is the slow leak. Most dealerships only fix what's on fire.
-          </p>
+              {fmtMoney(annualCost)}
+            </motion.p>
+            <p className="mt-4 text-white/70 text-sm">
+              {fmt(employeesLost)} lost × {fmtMoney(REPLACEMENT_COST)} to hire, train &amp; ramp
+            </p>
+          </motion.div>
         </div>
+
+        {/* Assumptions / source */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mt-8 text-center space-y-2"
+        >
+          <p className="text-xs" style={{ color: MUTED }}>
+            Assumes {fmtMoney(AVG_SALARY)} average salary and {fmtMoney(REPLACEMENT_COST)} replacement cost per employee (hire + train + ramp).
+          </p>
+          <p className="text-xs italic" style={{ color: MUTED }}>
+            Source: NADA Dealership Workforce Study (2025 Report) — 2024 calendar year data, 2,500+ dealerships, 246,000 payroll records.
+          </p>
+        </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 
