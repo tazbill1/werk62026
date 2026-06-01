@@ -22,4 +22,5 @@ export { Slide22CTA } from './Slide22CTA';
 export { SlideCostComparison } from './SlideCostComparison';
 export { SlideTextMe } from './SlideTextMe';
 export { SlideOnboardingDemo } from './SlideOnboardingDemo';
+export { SlideThankYou } from './SlideThankYou';
 
