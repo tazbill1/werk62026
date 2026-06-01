@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { MessageSquareText, Sparkles, Users } from 'lucide-react';
 import textmeConversation from '@/assets/textme-conversation.png.asset.json';
 
@@ -22,6 +23,7 @@ export const SlideTextMe = () => {
 
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
+      <SlideHeader />
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
