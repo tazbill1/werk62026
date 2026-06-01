@@ -20,9 +20,9 @@ export const SlideThankYou = () => {
           className="mb-8"
         >
           <img
-            src={werkLogo}
+            src={werkLogoAsset.url}
             alt="WerkandMe"
-            className="h-16 w-auto opacity-90"
+            className="h-24 w-auto"
           />
         </motion.div>
 
