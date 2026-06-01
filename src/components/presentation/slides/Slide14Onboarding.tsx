@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SlideHeader } from '../SlideHeader';
 import { UserCheck, AlertTriangle } from 'lucide-react';
 import guidemeScreenshot from '@/assets/guideme-onboarding-screenshot.png';
 
@@ -21,6 +22,7 @@ export const Slide14Onboarding = () => {
 
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-hidden">
+      <SlideHeader />
       <div className="relative z-10 w-full max-w-6xl px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
