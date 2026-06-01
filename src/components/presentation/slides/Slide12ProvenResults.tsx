@@ -61,7 +61,7 @@ export const Slide12ProvenResults = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="text-center">
-                      <div className={`text-3xl font-bold ${result.inverse ? 'text-destructive/80' : 'text-white/40'}`}>
+                      <div className={`text-3xl font-bold ${(result as any).inverse ? 'text-destructive/80' : 'text-white/40'}`}>
                         {result.before}{result.suffix}
                       </div>
                       <div className="text-white/40 text-xs mt-1">Before</div>
