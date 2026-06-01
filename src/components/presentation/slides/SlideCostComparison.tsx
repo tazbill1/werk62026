@@ -33,10 +33,10 @@ export const SlideCostComparison = () => {
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap');`}</style>
       <div
-        className="w-full h-full flex items-center justify-center p-4 overflow-hidden"
+        className="w-full h-full flex items-center justify-center px-4 py-3 overflow-hidden"
         style={{ backgroundColor: MIDNIGHT, fontFamily: 'Inter, sans-serif' }}
       >
-        <div className="w-full max-w-[1200px] mx-auto space-y-3">
+        <div className="w-full max-w-[1200px] mx-auto space-y-2">
           {/* Row 1 */}
           <div
             className="grid grid-cols-1 md:grid-cols-2 rounded-xl overflow-hidden"
