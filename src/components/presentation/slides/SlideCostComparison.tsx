@@ -94,11 +94,14 @@ export const SlideCostComparison = () => {
             {/* Right card */}
             <div className="p-8">
               <h3
-                className="text-2xl mb-6"
+                className="text-2xl mb-2"
                 style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
               >
-                The Cost of Apathy
+                The Hidden Cost of Apathy
               </h3>
+              <p className="text-sm mb-6" style={{ color: MUTED }}>
+                What happens when disengaged employees stay — and checked-out employees leave
+              </p>
               <div className="space-y-5">
                 {rightStats.map((s) => (
                   <div key={s.label}>
