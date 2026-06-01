@@ -47,26 +47,26 @@ export const SlideCostComparison = () => {
           >
             {/* Left card - NADA 2025 Data */}
             <div
-              className="p-6 md:border-r"
+              className="p-4 md:border-r"
               style={{ borderColor: `${ULTRA}66` }}
             >
               <h3
-                className="text-xl mb-1"
+                className="text-lg mb-1"
                 style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
               >
                 NADA 2025 Workforce Study
               </h3>
-              <p className="text-xs mb-4" style={{ color: MUTED }}>
+              <p className="text-[10px] mb-3" style={{ color: MUTED }}>
                 2024 calendar year data · 2,500+ dealerships · 246,000 payroll records
               </p>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {leftStats.map((s) => (
                   <div key={s.label}>
-                    <p className="text-[11px] uppercase tracking-wider" style={{ color: MUTED }}>
+                    <p className="text-[10px] uppercase tracking-wider" style={{ color: MUTED }}>
                       {s.label}
                     </p>
                     <p
-                      className="text-2xl md:text-3xl font-bold mt-0.5"
+                      className="text-xl md:text-2xl font-bold mt-0.5"
                       style={{ color: CHARTREUSE }}
                     >
                       {s.value}
@@ -74,16 +74,16 @@ export const SlideCostComparison = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-[11px] mt-5 italic" style={{ color: MUTED }}>
+              <p className="text-[10px] mt-3 italic" style={{ color: MUTED }}>
                 Source: NADA Dealership Workforce Study (2025 Report)
               </p>
             </div>
 
             {/* Right card */}
-            <div className="p-6">
+            <div className="p-4">
               {/* Headline */}
               <h3
-                className="text-xl md:text-2xl font-bold leading-snug mb-2"
+                className="text-base md:text-lg font-bold leading-snug mb-1"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 <span style={{ color: SAPPHIRE }}>42%</span>
