@@ -19,7 +19,6 @@ const slideComponents = [
   Slides.Slide21Rewards,
   Slides.Slide12ProvenResults,
   Slides.Slide13Implementation,
-  Slides.Slide22CTA,
   Slides.SlideThankYou,
 ];
 
