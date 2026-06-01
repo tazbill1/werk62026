@@ -398,7 +398,7 @@ const SCREEN_MAP: Record<string, React.FC> = {
 const groups = [
   { label: "Employee View", ids: ["home", "phases", "tasks", "detail_video", "detail_quiz", "detail_live"] },
   { label: "Manager View", ids: ["manager", "manager_detail"] },
-  { label: "Admin & Alerts", ids: ["admin", "notifications"] },
+  { label: "Alerts", ids: ["notifications"] },
 ];
 
 const descriptions: Record<string, string> = {
