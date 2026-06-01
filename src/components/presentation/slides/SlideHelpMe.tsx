@@ -94,7 +94,7 @@ export const SlideHelpMe = () => {
                   >
                     <div className="bg-werk-cyan text-werk-dark rounded-2xl rounded-br-md px-3 py-2 max-w-[80%]">
                       <div className="text-[10px] font-medium leading-snug">
-                        How many PTO days do I have left this year?
+                        What's our bereavement leave policy?
                       </div>
                     </div>
                   </motion.div>
@@ -107,7 +107,7 @@ export const SlideHelpMe = () => {
                   >
                     <div className="bg-white/10 text-white rounded-2xl rounded-bl-md px-3 py-2 max-w-[85%]">
                       <div className="text-[10px] leading-snug">
-                        You have <span className="text-werk-lime font-bold">7 PTO days</span> remaining for 2026. Requests need 2 weeks notice through your manager.
+                        We offer <span className="text-werk-lime font-bold">up to 3 days</span> of paid bereavement leave for immediate family. Notify your manager as soon as possible and HR will send you the leave form.
                       </div>
                     </div>
                   </motion.div>
