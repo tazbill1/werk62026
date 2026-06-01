@@ -11,6 +11,7 @@ export const SlideSolution = () => {
     { icon: Gift, title: 'Meaningful Rewards', desc: 'Incentives that actually matter' },
     { icon: Clock, title: 'Real-Time Analytics', desc: 'Visibility into team health' },
     { icon: Bot, title: 'helpMe AI Assistant', desc: 'Instant HR answers, 24/7' },
+    { icon: UserCheck, title: 'GuideMe Onboarding', desc: 'Structured 90-day new hire success' },
   ];
 
   return (
