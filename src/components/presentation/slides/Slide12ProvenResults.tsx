@@ -9,7 +9,7 @@ export const Slide12ProvenResults = () => {
   
   const results = [
     { label: 'Employee Engagement', before: 32, after: 68, suffix: '%' },
-    { label: 'Monthly Turnover', before: 8, after: 3, suffix: '%', inverse: true },
+    { label: 'Annual Turnover', suffix: '%', change: '21%', simpleDisplay: true },
     { label: 'Customer Satisfaction', before: 78, after: 92, suffix: '%' },
     { label: 'Unit Sales', before: 45, after: 67, suffix: 'units', prefix: '', change: '↑ 26%', simpleDisplay: true },
   ];
@@ -61,7 +61,7 @@ export const Slide12ProvenResults = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="text-center">
-                      <div className={`text-3xl font-bold ${result.inverse ? 'text-destructive/80' : 'text-white/40'}`}>
+                      <div className={`text-3xl font-bold ${(result as any).inverse ? 'text-destructive/80' : 'text-white/40'}`}>
                         {result.before}{result.suffix}
                       </div>
                       <div className="text-white/40 text-xs mt-1">Before</div>
