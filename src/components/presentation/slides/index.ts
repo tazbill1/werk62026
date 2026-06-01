@@ -21,6 +21,7 @@ export { Slide21Rewards } from './Slide21Rewards';
 export { Slide22CTA } from './Slide22CTA';
 export { SlideCostComparison } from './SlideCostComparison';
 export { SlideTextMe } from './SlideTextMe';
+export { SlideHelpMe } from './SlideHelpMe';
 export { SlideOnboardingDemo } from './SlideOnboardingDemo';
 export { SlideThankYou } from './SlideThankYou';
 
