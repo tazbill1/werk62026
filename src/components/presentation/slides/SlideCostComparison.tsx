@@ -193,24 +193,12 @@ export const SlideCostComparison = () => {
               </div>
             </div>
 
-            <div className="mt-3 pt-2 border-t text-center space-y-0.5" style={{ borderColor: `${ULTRA}66` }}>
-              <p className="text-[10px]" style={{ color: MUTED }}>
-                Assumes {fmtMoney(AVG_SALARY)} average salary and {fmtMoney(REPLACEMENT_COST)} replacement cost per employee.
-              </p>
+            <div className="mt-2 pt-2 border-t text-center" style={{ borderColor: `${ULTRA}66` }}>
               <p className="text-[10px] italic" style={{ color: MUTED }}>
-                Source: NADA Dealership Workforce Study (2025 Report)
+                Turnover is the fire alarm. Disengagement is the slow leak. Most dealerships only fix what's on fire.
               </p>
             </div>
           </div>
-
-
-          {/* Footer line */}
-          <p
-            className="text-center italic text-xs pt-1"
-            style={{ color: MUTED }}
-          >
-            Turnover is the fire alarm. Disengagement is the slow leak. Most dealerships only fix what's on fire.
-          </p>
         </div>
       </div>
     </>
