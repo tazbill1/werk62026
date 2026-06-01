@@ -4,7 +4,7 @@ import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { DealershipProvider, useDealership, formatCurrency } from '@/contexts/DealershipContext';
-import werkLogo from '@/assets/werkandme-logo.png';
+import werkLogo from '@/assets/werkandme-logo-reverse.png.asset.json';
 
 const CalculatorContent = () => {
   const { data, setData, employeesLost, effectiveTurnoverRate, replacementCostPerEmployee, annualTurnoverCost } = useDealership();
