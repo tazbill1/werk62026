@@ -1,4 +1,5 @@
-import werkLogo from '@/assets/werkandme-logo.png';
+import werkLogoReverse from '@/assets/werkandme-logo-reverse.png.asset.json';
+const werkLogo = werkLogoReverse.url;
 import { 
   Heart, Trophy, BarChart3, MessageSquare, Gift, Clock,
   TrendingDown, UserX, ArrowRight, ArrowUp, CheckCircle2, Sparkles,
@@ -56,7 +57,7 @@ export const RecapContent = () => {
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-4">
-                <img src={werkLogo} alt="WerkandMe" className="h-9 brightness-0 invert" />
+                <img src={werkLogo} alt="WerkandMe" className="h-9" />
                 <div>
                   <h1 className="text-xl font-bold text-white">Employee Engagement, Reimagined</h1>
                   <p className="text-white/50 text-xs">Purpose-built for automotive dealerships</p>
@@ -154,7 +155,7 @@ export const RecapContent = () => {
             {/* Header */}
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-4">
-                <img src={werkLogo} alt="WerkandMe" className="h-9 brightness-0 invert" />
+                <img src={werkLogo} alt="WerkandMe" className="h-9" />
                 <div>
                   <h1 className="text-xl font-bold text-white">One Platform. Built for Dealerships.</h1>
                   <p className="text-white/50 text-xs">Everything your team needs to stay engaged, recognized, and growing.</p>
@@ -241,7 +242,7 @@ export const RecapContent = () => {
 
               {/* CTA */}
               <div className="bg-werk-lime/10 rounded-xl p-5 border border-werk-lime/30 flex flex-col items-center justify-center text-center">
-                <img src={werkLogo} alt="WerkandMe" className="h-8 brightness-0 invert mb-4" />
+                <img src={werkLogo} alt="WerkandMe" className="h-8 mb-4" />
                 <h2 className="text-white font-bold text-lg mb-2">Ready to see it in action?</h2>
                 <p className="text-white/60 text-xs mb-4 max-w-[220px] leading-relaxed">
                   We'll show you exactly how WerkandMe works for a dealership like yours — in under 30 minutes.
@@ -256,7 +257,7 @@ export const RecapContent = () => {
             {/* Footer */}
             <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <img src={werkLogo} alt="WerkandMe" className="h-5 brightness-0 invert opacity-50" />
+                <img src={werkLogo} alt="WerkandMe" className="h-5 opacity-50" />
                 <span className="text-white/40 text-[10px]">werkandme.com</span>
               </div>
               <span className="text-white/30 text-[10px]">Page 2 of 2</span>

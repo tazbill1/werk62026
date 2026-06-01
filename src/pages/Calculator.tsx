@@ -4,7 +4,7 @@ import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { DealershipProvider, useDealership, formatCurrency } from '@/contexts/DealershipContext';
-import werkLogo from '@/assets/werkandme-logo.png';
+import werkLogo from '@/assets/werkandme-logo-reverse.png.asset.json';
 
 const CalculatorContent = () => {
   const { data, setData, employeesLost, effectiveTurnoverRate, replacementCostPerEmployee, annualTurnoverCost } = useDealership();
@@ -13,7 +13,7 @@ const CalculatorContent = () => {
     <div className="min-h-screen gradient-werk-dark flex flex-col">
       {/* Header */}
       <header className="p-6 flex items-center justify-between">
-        <img src={werkLogo} alt="WerkandMe" className="h-8 brightness-0 invert" />
+        <img src={werkLogo.url} alt="WerkandMe" className="h-8" />
         <Button 
           variant="outline" 
           size="sm"

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
-import werkLogo from '@/assets/werkandme-logo.png';
+import werkLogo from '@/assets/werkandme-logo-reverse.png.asset.json';
 import { Heart, Trophy, BarChart3, MessageSquare, Gift, Users } from 'lucide-react';
 
 export const Slide10OnePlatform = () => {
@@ -27,12 +27,12 @@ export const Slide10OnePlatform = () => {
           className="text-center mb-12"
         >
           <motion.img
-            src={werkLogo}
+            src={werkLogo.url}
             alt="WerkandMe"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 }}
-            className="h-16 mx-auto mb-6 brightness-0 invert"
+            className="h-16 mx-auto mb-6"
           />
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             One Platform. <span className="text-gradient-werk">Complete Solution.</span>
