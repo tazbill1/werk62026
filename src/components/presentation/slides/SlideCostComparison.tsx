@@ -87,33 +87,105 @@ export const SlideCostComparison = () => {
 
             {/* Right card */}
             <div className="p-8">
+              {/* Headline */}
               <h3
-                className="text-2xl mb-2"
-                style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}
+                className="text-2xl md:text-3xl font-bold leading-snug mb-3"
+                style={{ fontFamily: 'Playfair Display, serif' }}
               >
-                The Hidden Cost of Apathy
+                <span style={{ color: SAPPHIRE }}>42%</span>
+                <span style={{ color: '#FFFFFF' }}> Leave. </span>
+                <span style={{ color: CHARTREUSE }}>33%</span>
+                <span style={{ color: '#FFFFFF' }}> Stay But Stop Caring.</span>
               </h3>
+
+              {/* Subhead */}
               <p className="text-sm mb-6" style={{ color: MUTED }}>
-                What happens when disengaged employees stay — and checked-out employees leave
+                Turnover gets counted. Disengagement gets ignored. Both are costing you.
               </p>
-              <div className="space-y-5">
-                {rightStats.map((s) => (
-                  <div key={s.label}>
-                    <p className="text-xs uppercase tracking-wider" style={{ color: MUTED }}>
-                      {s.label}
-                    </p>
-                    <p
-                      className="text-3xl md:text-4xl font-bold mt-1"
-                      style={{ color: SAPPHIRE }}
-                    >
-                      {s.value}
-                    </p>
-                  </div>
-                ))}
+
+              {/* Stat blocks */}
+              <div className="space-y-2">
+                {/* Block 1 */}
+                <div
+                  className="rounded-lg p-4"
+                  style={{
+                    backgroundColor: `${MIDNIGHT}cc`,
+                    border: `1px solid ${ULTRA}66`,
+                  }}
+                >
+                  <p
+                    className="text-3xl md:text-4xl font-bold"
+                    style={{ color: CHARTREUSE }}
+                  >
+                    1 in 3
+                  </p>
+                  <p className="text-sm text-white mt-1">
+                    dealership employees say they're not engaged or excited about their job
+                  </p>
+                  <p className="text-[11px] italic mt-2" style={{ color: MUTED }}>
+                    Cox Automotive Dealership Staffing Study
+                  </p>
+                </div>
+
+                {/* Block 2 */}
+                <div
+                  className="rounded-lg p-4"
+                  style={{
+                    backgroundColor: `${MIDNIGHT}cc`,
+                    border: `1px solid ${ULTRA}66`,
+                  }}
+                >
+                  <p
+                    className="text-3xl md:text-4xl font-bold"
+                    style={{ color: SAPPHIRE }}
+                  >
+                    59%
+                  </p>
+                  <p className="text-sm text-white mt-1">
+                    of the workforce is filling a seat and watching the clock — doing the minimum, psychologically checked out
+                  </p>
+                  <p className="text-[11px] italic mt-2" style={{ color: MUTED }}>
+                    Gallup State of the Global Workplace
+                  </p>
+                </div>
+
+                {/* Block 3 */}
+                <div
+                  className="rounded-lg p-4"
+                  style={{
+                    backgroundColor: `${MIDNIGHT}cc`,
+                    border: `1px solid ${ULTRA}66`,
+                  }}
+                >
+                  <p
+                    className="text-3xl md:text-4xl font-bold"
+                    style={{ color: '#FFFFFF' }}
+                  >
+                    34% of salary
+                  </p>
+                  <p className="text-sm text-white mt-1">
+                    lost per disengaged employee per year in productivity
+                  </p>
+                  <p className="text-[11px] italic mt-2" style={{ color: MUTED }}>
+                    Gallup
+                  </p>
+                </div>
               </div>
-              <p className="text-xs mt-8 italic" style={{ color: MUTED }}>
-                Source: Gallup State of the American Workplace
-              </p>
+
+              {/* Bottom callout */}
+              <div
+                className="rounded-lg p-3 mt-4"
+                style={{
+                  backgroundColor: '#252a55',
+                }}
+              >
+                <p className="text-xs italic" style={{ color: MUTED }}>
+                  "39% of managers haven't noticed their employee's performance has already dropped."
+                </p>
+                <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  — Gallup
+                </p>
+              </div>
             </div>
           </div>
 
