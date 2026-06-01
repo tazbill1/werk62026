@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
+import { useDealership } from '@/contexts/DealershipContext';
 
 const MIDNIGHT = '#1E2248';
 const ULTRA = '#1A51A0';
@@ -7,25 +8,18 @@ const CHARTREUSE = '#DDDE40';
 const MUTED = 'rgba(255,255,255,0.6)';
 
 const AVG_SALARY = 60000;
-const REPLACEMENT_COST = 15000; // 25% of salary
-const DISENGAGED_RATE = 0.17;
-const DISENGAGED_COST_RATE = 0.34;
+const REPLACEMENT_COST = 15000;
 
 const fmt = (n: number) => n.toLocaleString();
 const fmtMoney = (n: number) => `$${Math.round(n).toLocaleString()}`;
 
 export const SlideCostComparison = () => {
-  const [employees, setEmployees] = useState(65);
-  const [turnoverRate, setTurnoverRate] = useState(42);
+  const { data, employeesLost, effectiveTurnoverRate } = useDealership();
 
-  const calc = useMemo(() => {
-    const lost = Math.round(employees * (turnoverRate / 100));
-    const turnoverCost = lost * REPLACEMENT_COST;
-    const disengaged = Math.round(employees * DISENGAGED_RATE);
-    const disengagementCost = Math.round(disengaged * AVG_SALARY * DISENGAGED_COST_RATE);
-    const combined = turnoverCost + disengagementCost;
-    return { lost, turnoverCost, disengaged, disengagementCost, combined };
-  }, [employees, turnoverRate]);
+  const annualCost = useMemo(
+    () => employeesLost * REPLACEMENT_COST,
+    [employeesLost]
+  );
 
   const leftStats = [
     { label: 'Industry-Wide Turnover (2024)', value: '42%' },
