@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import werkLogoAsset from '@/assets/werkandme-logo-reverse.png.asset.json';
-import { Mail, Phone, Globe, Heart } from 'lucide-react';
+import { Globe, Heart } from 'lucide-react';
 
 export const SlideThankYou = () => {
   return (
@@ -58,15 +58,8 @@ export const SlideThankYou = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.6 }}
-          className="flex flex-col md:flex-row items-center gap-6 text-white/50"
+          className="text-white/50"
         >
-          <a
-            href="mailto:hello@werkandme.com"
-            className="flex items-center gap-2 hover:text-werk-cyan transition-colors"
-          >
-            <Mail className="w-4 h-4" />
-            <span>hello@werkandme.com</span>
-          </a>
           <a
             href="https://werkandme.com"
             target="_blank"
