@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import werkLogo from '@/assets/werkandme-logo-reverse.png.asset.json';
-import { Heart, Trophy, BarChart3, MessageSquare, Gift, Clock, Bot } from 'lucide-react';
+import { Heart, Trophy, BarChart3, MessageSquare, Gift, Clock, Bot, UserCheck } from 'lucide-react';
 
 export const SlideSolution = () => {
   const features = [
@@ -11,6 +11,7 @@ export const SlideSolution = () => {
     { icon: Gift, title: 'Meaningful Rewards', desc: 'Incentives that actually matter' },
     { icon: Clock, title: 'Real-Time Analytics', desc: 'Visibility into team health' },
     { icon: Bot, title: 'helpMe AI Assistant', desc: 'Instant HR answers, 24/7' },
+    { icon: UserCheck, title: 'GuideMe Onboarding', desc: 'Structured 90-day new hire success' },
   ];
 
   return (
