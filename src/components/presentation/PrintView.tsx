@@ -10,7 +10,6 @@ const slideComponents = [
   Slides.SlideWhyEngage,
   Slides.SlideSolution,
   Slides.Slide15EmotionalCheckins,
-  Slides.SlideCultureCoach,
   Slides.Slide16Dashboard,
   Slides.Slide17Gamification,
   Slides.Slide18Recognition,
@@ -18,6 +17,7 @@ const slideComponents = [
   Slides.Slide20Training,
   Slides.Slide21Rewards,
   Slides.Slide12ProvenResults,
+  Slides.SlideCultureCoach,
   Slides.Slide13Implementation,
   Slides.SlideThankYou,
 ];
