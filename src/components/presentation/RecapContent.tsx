@@ -37,6 +37,7 @@ const features = [
   { icon: MessageSquare, title: 'Personalized Recognition', desc: 'Tailored to individual motivators — because not everyone wants a pizza party.' },
   { icon: Gift, title: 'Meaningful Rewards', desc: 'Incentives that actually matter to your people, redeemable in ways they choose.' },
   { icon: Clock, title: 'Real-Time Analytics', desc: 'Know exactly where your team stands — no more guessing or annual surveys.' },
+  { icon: Bot, title: 'helpMe AI HR Assistant', desc: 'Trained on your handbook and policies — instant, accurate answers for every employee, 24/7.' },
 ];
 
 const results = [
