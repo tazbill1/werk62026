@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import werkLogo from '@/assets/werkandme-logo.png';
+import werkLogoAsset from '@/assets/werkandme-logo-reverse.png.asset.json';
 import { Mail, Phone, Globe, Heart } from 'lucide-react';
 
 export const SlideThankYou = () => {
@@ -20,9 +20,9 @@ export const SlideThankYou = () => {
           className="mb-8"
         >
           <img
-            src={werkLogo}
+            src={werkLogoAsset.url}
             alt="WerkandMe"
-            className="h-16 w-auto opacity-90"
+            className="h-24 w-auto"
           />
         </motion.div>
 
