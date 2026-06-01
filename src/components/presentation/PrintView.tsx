@@ -20,7 +20,6 @@ const slideComponents = [
   Slides.Slide12ProvenResults,
   Slides.Slide13Implementation,
   Slides.Slide22CTA,
-  Slides.SlideThankYou,
 ];
 
 export const PrintView = () => {
