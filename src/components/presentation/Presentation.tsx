@@ -20,7 +20,6 @@ const slideComponents = [
   
   // Features Deep-Dive
   Slides.Slide15EmotionalCheckins,
-  Slides.SlideCultureCoach,
   Slides.Slide16Dashboard,
   Slides.Slide17Gamification,
   Slides.Slide18Recognition,
@@ -34,6 +33,7 @@ const slideComponents = [
   Slides.Slide12ProvenResults,
   
   // Close Sequence
+  Slides.SlideCultureCoach,
   Slides.Slide13Implementation,
   Slides.SlideThankYou,
 ];
