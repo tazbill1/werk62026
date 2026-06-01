@@ -187,7 +187,7 @@ export const SlideHelpMe = () => {
 
             {tab === 'features' && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-2.5">
-                <FeatureCard icon={MessageSquare} title="Instant answers, any time" desc="Employees ask in plain language and get instant answers — PTO, dress code, benefits, returns. No waiting, no digging through handbooks." />
+                <FeatureCard icon={MessageSquare} title="Instant answers, any time" desc="Employees ask in plain language and get instant answers — dress code, benefits, policies, returns. No waiting, no digging through handbooks." />
                 <FeatureCard icon={Brain} title="Trained on your dealership" desc="helpMe only knows what your dealership teaches it. Upload handbooks, SOPs, policies, and FAQs — it learns your store, not generic answers." />
                 <FeatureCard icon={RefreshCw} title="Always up to date" desc="Update the knowledge base once and every employee gets the right answer immediately. No outdated binders or conflicting information." />
                 <FeatureCard icon={BarChart3} title="See what employees are asking" desc="Managers get visibility into common questions. If 15 people ask about the holiday schedule, that's a signal to communicate proactively." />
