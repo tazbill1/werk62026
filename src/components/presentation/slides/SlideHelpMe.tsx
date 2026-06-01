@@ -51,8 +51,8 @@ export const SlideHelpMe = () => {
             <Bot className="w-5 h-5" />
             <span className="text-sm font-semibold uppercase tracking-wider">AI HR Assistant</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            <span className="text-gradient-werk">help</span>me
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            Your Dealership's <span className="text-gradient-werk">AI HR Assistant</span>
           </h2>
           <p className="mt-3 text-lg text-white/70 max-w-2xl mx-auto">
             Your dealership's AI-powered HR assistant — trained on your policies, available to every employee, 24/7.
