@@ -1,4 +1,3 @@
-import werkLogoBase from '@/assets/werkandme-logo.png';
 import werkLogoReverse from '@/assets/werkandme-logo-reverse.png.asset.json';
 const werkLogo = werkLogoReverse.url;
 import { 
