@@ -27,6 +27,7 @@ const slideComponents = [
   Slides.Slide19Serving,
   Slides.Slide20Training,
   Slides.Slide14Onboarding,
+  Slides.SlideOnboardingDemo,
   Slides.Slide14AskMe,
   Slides.SlideTextMe,
   Slides.Slide21Rewards,
