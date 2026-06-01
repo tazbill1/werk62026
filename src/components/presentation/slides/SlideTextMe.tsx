@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
 import { MessageSquareText, Sparkles, Users } from 'lucide-react';
-import textmeConversation from '@/assets/textme-conversation.png.asset.json';
 
 export const SlideTextMe = () => {
   const audiences = [
