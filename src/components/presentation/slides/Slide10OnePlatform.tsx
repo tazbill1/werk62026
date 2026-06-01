@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { SlideHeader } from '../SlideHeader';
-import werkLogo from '@/assets/werkandme-logo.png';
+import werkLogo from '@/assets/werkandme-logo-reverse.png.asset.json';
 import { Heart, Trophy, BarChart3, MessageSquare, Gift, Users } from 'lucide-react';
 
 export const Slide10OnePlatform = () => {
