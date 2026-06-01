@@ -12,6 +12,7 @@ export const SlideSolution = () => {
     { icon: Clock, title: 'Real-Time Analytics', desc: 'Visibility into team health' },
     { icon: Bot, title: 'helpMe AI Assistant', desc: 'Instant HR answers, 24/7' },
     { icon: UserCheck, title: 'GuideMe Onboarding', desc: 'Structured 90-day new hire success' },
+    { icon: MessageCircleQuestion, title: 'AskMe Pulse Feedback', desc: 'Real-time team insights & surveys' },
   ];
 
   return (
