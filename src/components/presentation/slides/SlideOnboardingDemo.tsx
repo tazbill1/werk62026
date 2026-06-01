@@ -353,46 +353,6 @@ function MgrDetail() {
   );
 }
 
-function AdminScreen() {
-  return (
-    <Phone>
-      <Hdr title="Template Config" back right={<span style={{ color: C.chart, fontSize: 12, fontWeight: 600 }}>Save</span>} />
-      <div style={{ padding: "14px 18px" }}>
-        <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "10px 14px", marginBottom: 12 }}>
-          <div style={{ color: C.muted, fontSize: 10, marginBottom: 3 }}>Editing template for:</div>
-          <div style={{ display: "flex", justifyContent: "space-between" }}><span style={{ color: C.white, fontSize: 14, fontWeight: 600 }}>Sales Consultant</span><span style={{ color: C.sapphire, fontSize: 12 }}>Change ▾</span></div>
-        </div>
-        <div style={{ color: C.muted, fontSize: 10, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>Dealership Settings</div>
-        <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "10px 14px", marginBottom: 12 }}>
-          {[{ l: "Onboarding Points", on: true }, { l: "Manager SMS Alerts", on: true }, { l: "Manager Email Alerts", on: true }, { l: "Summary Time", v: "7:30 AM" }].map((s, i) => (
-            <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "6px 0", borderBottom: i < 3 ? `1px solid ${C.border}` : "none" }}>
-              <span style={{ color: C.white, fontSize: 12 }}>{s.l}</span>
-              {s.v ? <span style={{ color: C.sapphire, fontSize: 12 }}>{s.v}</span> : (
-                <div style={{ width: 34, height: 18, borderRadius: 9, background: s.on ? C.sapphire : C.muted, position: "relative" }}>
-                  <div style={{ width: 14, height: 14, borderRadius: "50%", background: "white", position: "absolute", top: 2, left: s.on ? 18 : 2 }} />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        <div style={{ color: C.muted, fontSize: 10, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>Week 1 Tasks</div>
-        {[{ t: "Road to the Sale video", ty: "Video", v: "Self" }, { t: "Dress code policy", ty: "Doc", v: "Self" }, { t: "Meet & greet quiz", ty: "Quiz", v: "Self" }, { t: "Shadow consultant", ty: "Live", v: "Mgr" }].map((t, i) => (
-          <div key={i} style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, padding: "8px 12px", marginBottom: 5, display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ color: C.muted, fontSize: 12 }}>⠿</span>
-            <div style={{ flex: 1 }}>
-              <div style={{ color: C.white, fontSize: 11, fontWeight: 500 }}>{t.t}</div>
-              <div style={{ display: "flex", gap: 6, marginTop: 2 }}>
-                <span style={{ fontSize: 9, color: C.sapphire }}>{t.ty}</span>
-                <span style={{ fontSize: 9, color: t.v === "Mgr" ? C.chart : C.muted }}>• {t.v === "Mgr" ? "Manager verified" : "Self-reported"}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <Nav active="menu" mgr />
-    </Phone>
-  );
-}
 
 function NotiScreen() {
   return (
