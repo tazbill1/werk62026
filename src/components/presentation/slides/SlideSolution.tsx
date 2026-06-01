@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import werkLogo from '@/assets/werkandme-logo-reverse.png.asset.json';
-import { Heart, Trophy, BarChart3, MessageSquare, Gift, Clock, Bot } from 'lucide-react';
+import { Heart, Trophy, BarChart3, MessageSquare, Gift, Clock, Bot, UserCheck } from 'lucide-react';
 
 export const SlideSolution = () => {
   const features = [
