@@ -27,18 +27,27 @@ export const Slide18Recognition = () => {
               to celebrate each other's wins.
             </p>
             
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <div className="bg-card rounded-xl p-4 border shadow-sm text-center">
-                <div className="text-4xl font-bold text-gradient-werk">+20%</div>
-                <div className="text-sm text-muted-foreground mt-1">Higher retention with peer recognition</div>
-                <div className="text-[10px] text-muted-foreground/70 mt-1">BI Worldwide, 2024</div>
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              <div className="bg-card rounded-xl p-3 border shadow-sm text-center">
+                <div className="text-3xl font-bold text-gradient-werk">65%</div>
+                <div className="text-xs text-muted-foreground mt-1">Would work harder if better recognized</div>
               </div>
-              <div className="bg-card rounded-xl p-4 border shadow-sm text-center">
-                <div className="text-4xl font-bold text-gradient-werk">4x</div>
-                <div className="text-sm text-muted-foreground mt-1">More likely to be engaged when recognized</div>
-                <div className="text-[10px] text-muted-foreground/70 mt-1">Gallup × Workhuman</div>
+              <div className="bg-card rounded-xl p-3 border shadow-sm text-center">
+                <div className="text-3xl font-bold text-gradient-werk">+35.7%</div>
+                <div className="text-xs text-muted-foreground mt-1">Stronger financial impact from peer vs. manager-only recognition</div>
+              </div>
+              <div className="bg-card rounded-xl p-3 border shadow-sm text-center">
+                <div className="text-3xl font-bold text-gradient-werk">2×</div>
+                <div className="text-xs text-muted-foreground mt-1">More likely to stay past year one when work anniversary is acknowledged</div>
+              </div>
+              <div className="bg-card rounded-xl p-3 border shadow-sm text-center">
+                <div className="text-3xl font-bold text-gradient-werk">82% / 70%</div>
+                <div className="text-xs text-muted-foreground mt-1">Happier from milestone recognition — and less likely to leave</div>
               </div>
             </div>
+            <p className="mt-4 text-[10px] text-muted-foreground/60 leading-relaxed">
+              Sources: Gallup/Workhuman (2022); SHRM/Globoforce; BambooHR Anniversary Study; O.C. Tanner Global Culture Report (2023).
+            </p>
             
             <div className="mt-6 flex flex-wrap gap-2">
               <span className="px-3 py-1.5 bg-werk-lime/10 text-werk-lime rounded-full text-sm font-medium">🌟 Customer Hero</span>
