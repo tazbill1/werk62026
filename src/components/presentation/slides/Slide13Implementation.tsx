@@ -9,7 +9,6 @@ export const Slide13Implementation = () => {
       title: 'Strategy',
       sub: 'The Who, What & How',
       bullets: ['Define your goals', 'Map your team structure', 'Build your engagement plan'],
-      cardBg: '',
     },
     {
       num: 2,
@@ -18,7 +17,6 @@ export const Slide13Implementation = () => {
       title: 'Set-Up',
       sub: 'Built for your dealership',
       bullets: ['Platform customization', 'Brand integration', 'Admin & manager training'],
-      cardBg: '',
     },
     {
       num: 3,
@@ -27,7 +25,6 @@ export const Slide13Implementation = () => {
       title: 'Go Live',
       sub: 'In-person launch day',
       bullets: ['On-site team launch', 'Employee app activation', 'First check-ins & challenges'],
-      cardBg: '',
     },
     {
       num: 4,
@@ -36,7 +33,6 @@ export const Slide13Implementation = () => {
       title: 'Collaboration',
       sub: 'Ongoing partnership',
       bullets: ['Monthly coaching sessions', 'Strategy & data reviews', 'New ideas, executed together'],
-      cardBg: 'rgba(181,229,80,0.06)',
     },
   ];
 
@@ -53,70 +49,70 @@ export const Slide13Implementation = () => {
       </div>
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col items-center justify-center px-8 pt-14 pb-4">
+      <div className="flex-1 flex flex-col items-center justify-center px-16 pt-16 pb-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-6 max-w-4xl"
+          className="text-center mb-10"
         >
-          <div className="uppercase text-xs font-semibold tracking-[0.2em] mb-2" style={{ color: '#4FC3F7' }}>
+          <div className="slide-kicker mb-4" style={{ color: '#4FC3F7' }}>
             Your path to a fully engaged team
           </div>
-          <h2 className="text-[26px] font-bold text-white leading-tight">
+          <h2 className="slide-title text-white">
             Four steps. Four weeks.{' '}
-            <span style={{ color: '#4FC3F7' }}>Fully live and driving results.</span>
+            <span style={{ color: '#4FC3F7' }}>Fully live.</span>
           </h2>
-          <p className="mt-2 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+          <p className="slide-body mt-5 max-w-[1100px]" style={{ color: 'rgba(255,255,255,0.55)' }}>
             We guide you through every step — from strategy to launch — and stay by your side long after go-live.
           </p>
         </motion.div>
 
         {/* 4-step grid */}
-        <div className="relative w-full max-w-4xl mb-5">
+        <div className="relative w-full mb-10">
           {/* Connector lines */}
-          <div className="hidden md:block absolute top-[36px] left-[12.5%] right-[12.5%] h-px" style={{ background: 'rgba(255,255,255,0.1)' }} />
+          <div className="absolute top-[44px] left-[10%] right-[10%] h-px" style={{ background: 'rgba(255,255,255,0.1)' }} />
           <div
-            className="hidden md:block absolute top-[35px] left-[12.5%] right-[12.5%] h-[3px] rounded-full"
+            className="absolute top-[43px] left-[10%] right-[10%] h-[3px] rounded-full"
             style={{ background: 'linear-gradient(90deg, #1D9E75, #378ADD, #7F77DD, #B5E550)', opacity: 0.4 }}
           />
 
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-4 gap-5">
             {steps.map((s, i) => (
               <motion.div
                 key={s.num}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 + i * 0.1 }}
-                className="flex flex-col items-center px-1.5"
+                className="flex flex-col items-center"
               >
                 {/* Circle */}
                 <div
-                  className="w-[72px] h-[72px] rounded-full flex items-center justify-center relative z-10 mb-1"
-                  style={{ background: s.circleBg, border: `2px solid ${s.color}` }}
+                  className="w-[90px] h-[90px] rounded-full flex items-center justify-center relative z-10 mb-2"
+                  style={{ background: s.circleBg, border: `3px solid ${s.color}` }}
                 >
-                  <div className="text-lg font-bold text-white leading-none">{s.num}</div>
+                  <div className="slide-subtitle font-bold text-white leading-none">{s.num}</div>
                 </div>
-                <div className="text-[10px] uppercase tracking-wider font-semibold mb-2" style={{ color: s.color }}>
+                <div className="slide-kicker mb-3" style={{ color: s.color }}>
                   Step
                 </div>
 
                 {/* Card */}
                 <div
-                  className="w-full rounded-xl"
+                  className="w-full rounded-2xl"
                   style={{
-                    background: s.cardBg || 'rgba(255,255,255,0.03)',
+                    background: 'rgba(255,255,255,0.03)',
                     border: `1px solid ${s.color}33`,
-                    borderTop: `2px solid ${s.color}`,
-                    padding: '16px 14px',
+                    borderTop: `3px solid ${s.color}`,
+                    padding: '28px 24px',
                   }}
                 >
-                  <div className="text-sm font-bold text-white mb-0.5">{s.title}</div>
-                  <div className="text-[11px] mb-2" style={{ color: s.color }}>{s.sub}</div>
-                  <ul className="space-y-1">
+                  <div className="slide-subtitle font-bold text-white mb-1">{s.title}</div>
+                  <div className="slide-caption mb-5" style={{ color: s.color }}>{s.sub}</div>
+                  <ul className="space-y-3">
                     {s.bullets.map((b) => (
-                      <li key={b} className="text-[11px] flex items-start gap-1.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                        <span style={{ color: s.color }} className="mt-0.5 text-[8px]">●</span>
+                      <li key={b} className="slide-body flex items-start gap-3" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                        <span style={{ color: s.color }} className="mt-1.5 text-[10px]">●</span>
                         {b}
                       </li>
                     ))}
@@ -132,20 +128,20 @@ export const Slide13Implementation = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5 }}
-          className="flex items-center gap-4 rounded-[40px] max-w-[520px] w-full"
-          style={{ background: 'rgba(29,158,117,0.08)', border: '1px solid rgba(29,158,117,0.2)', padding: '10px 24px' }}
+          className="flex items-center gap-6 rounded-[48px] max-w-[900px] w-full"
+          style={{ background: 'rgba(29,158,117,0.08)', border: '1px solid rgba(29,158,117,0.2)', padding: '20px 32px' }}
         >
           <div
-            className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
+            className="w-14 h-14 rounded-full flex items-center justify-center text-white slide-body font-bold flex-shrink-0"
             style={{ background: 'linear-gradient(135deg, #1D9E75, #4FC3F7)' }}
           >
             CC
           </div>
           <div>
-            <div className="text-[10px] uppercase tracking-[0.15em] font-bold" style={{ color: '#4FC3F7' }}>
+            <div className="slide-kicker mb-1" style={{ color: '#4FC3F7' }}>
               Your dedicated Culture Coach
             </div>
-            <div className="text-[11px] mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <div className="slide-body" style={{ color: 'rgba(255,255,255,0.55)' }}>
               With you from day one — bringing ideas, running the playbook, and doing the heavy lifting.
             </div>
           </div>
@@ -153,14 +149,15 @@ export const Slide13Implementation = () => {
       </div>
 
       {/* Footer */}
-      <div className="px-8 py-3 flex items-center justify-between" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-        <span className="text-[11px]" style={{ color: 'rgba(255,255,255,0.35)' }}>
+      <div className="px-8 py-4 flex items-center justify-between" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        <span className="slide-chrome" style={{ color: 'rgba(255,255,255,0.35)' }}>
           Built for dealerships. Proven in the showroom.
         </span>
-        <span className="text-[11px] font-semibold" style={{ color: '#1D9E75' }}>
+        <span className="slide-chrome font-semibold" style={{ color: '#1D9E75' }}>
           Werk • Life • Community
         </span>
       </div>
     </div>
   );
 };
+
