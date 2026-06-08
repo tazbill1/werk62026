@@ -30,11 +30,11 @@ const slideComponents = [
   Slides.SlideHelpMe,
   Slides.Slide14AskMe,
   Slides.SlideTextMe,
-  Slides.Slide12ProvenResults,
   Slides.Slide21Rewards,
   
   // Close Sequence
   Slides.SlideCultureCoach,
+  Slides.Slide12ProvenResults,
   Slides.Slide13Implementation,
   Slides.SlideThankYou,
 ];
