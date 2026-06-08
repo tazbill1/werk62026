@@ -11,7 +11,6 @@ const slideComponents = [
   Slides.SlideThreeQuestions,
   Slides.SlideDataInput,
   Slides.SlideCostComparison,
-  Slides.Slide12ProvenResults,
   
   // Problem & Why
   Slides.SlideWorkforceWants,
@@ -31,6 +30,7 @@ const slideComponents = [
   Slides.SlideHelpMe,
   Slides.Slide14AskMe,
   Slides.SlideTextMe,
+  Slides.Slide12ProvenResults,
   Slides.Slide21Rewards,
   
   // Close Sequence
