@@ -25,12 +25,12 @@ const slideComponents = [
   Slides.Slide18Recognition,
   Slides.Slide19Serving,
   Slides.Slide20Training,
+  Slides.Slide21Rewards,
   Slides.Slide14Onboarding,
   Slides.SlideOnboardingDemo,
   Slides.SlideHelpMe,
   Slides.Slide14AskMe,
   Slides.SlideTextMe,
-  Slides.Slide21Rewards,
   
   // Close Sequence
   Slides.SlideCultureCoach,
