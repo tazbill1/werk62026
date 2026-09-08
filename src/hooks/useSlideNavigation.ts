@@ -11,27 +11,31 @@ export const useSlideNavigation = ({ totalSlides, onSlideChange }: UseSlideNavig
   const [isAnimating, setIsAnimating] = useState(false);
 
   const goToSlide = useCallback((index: number) => {
-    if (isAnimating || index < 0 || index >= totalSlides || index === currentSlide) return;
-    
-    setIsAnimating(true);
-    setDirection(index > currentSlide ? 'next' : 'prev');
-    setCurrentSlide(index);
-    onSlideChange?.(index);
-    
-    setTimeout(() => setIsAnimating(false), 500);
-  }, [currentSlide, isAnimating, totalSlides, onSlideChange]);
+    setCurrentSlide((prev) => {
+      if (index < 0 || index >= totalSlides || index === prev) return prev;
+      setDirection(index > prev ? 'next' : 'prev');
+      onSlideChange?.(index);
+      return index;
+    });
+  }, [totalSlides, onSlideChange]);
 
   const nextSlide = useCallback(() => {
-    if (currentSlide < totalSlides - 1) {
-      goToSlide(currentSlide + 1);
-    }
-  }, [currentSlide, totalSlides, goToSlide]);
+    setCurrentSlide((prev) => {
+      if (prev >= totalSlides - 1) return prev;
+      setDirection('next');
+      onSlideChange?.(prev + 1);
+      return prev + 1;
+    });
+  }, [totalSlides, onSlideChange]);
 
   const prevSlide = useCallback(() => {
-    if (currentSlide > 0) {
-      goToSlide(currentSlide - 1);
-    }
-  }, [currentSlide, goToSlide]);
+    setCurrentSlide((prev) => {
+      if (prev <= 0) return prev;
+      setDirection('prev');
+      onSlideChange?.(prev - 1);
+      return prev - 1;
+    });
+  }, [onSlideChange]);
 
   // Keyboard navigation
   useEffect(() => {
