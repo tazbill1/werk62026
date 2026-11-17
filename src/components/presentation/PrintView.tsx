@@ -1,13 +1,13 @@
+import { MotionConfig } from 'framer-motion';
 import { DealershipProvider } from '@/contexts/DealershipContext';
 import * as Slides from './slides';
 
+// Same order as the live deck (minus the interactive data-entry form).
 const slideComponents = [
   Slides.Slide00Cover,
-  Slides.SlideDataInput,
-  Slides.SlideDoubleDrain,
-  Slides.Slide05NotTrustFalls,
+  Slides.SlideThreeQuestions,
+  Slides.SlideCostComparison,
   Slides.SlideWorkforceWants,
-  Slides.SlideWhyEngage,
   Slides.SlideSolution,
   Slides.Slide15EmotionalCheckins,
   Slides.Slide16Dashboard,
@@ -17,22 +17,28 @@ const slideComponents = [
   Slides.Slide20Training,
   Slides.Slide21Rewards,
   Slides.Slide14AskMe,
+  Slides.SlideOnboardingDemo,
   Slides.SlideHelpMe,
+  Slides.SlideTextMe,
   Slides.SlideCultureCoach,
   Slides.Slide13Implementation,
   Slides.SlideThankYou,
 ];
 
-export const PrintView = () => {
-  return (
-    <DealershipProvider>
+// Each slide renders on a fixed desktop-sized canvas, then is scaled to fill
+// one landscape letter page, so the print matches what's shown on screen.
+export const PrintView = () => (
+  <DealershipProvider>
+    <MotionConfig reducedMotion="always">
       <div className="print-container">
         {slideComponents.map((SlideComponent, index) => (
           <div key={index} className="print-slide">
-            <SlideComponent />
+            <div className="print-canvas">
+              <SlideComponent />
+            </div>
           </div>
         ))}
       </div>
-    </DealershipProvider>
-  );
-};
+    </MotionConfig>
+  </DealershipProvider>
+);

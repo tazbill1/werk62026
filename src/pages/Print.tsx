@@ -6,7 +6,7 @@ const Print = () => {
     // Auto-trigger print dialog after a short delay for rendering
     const timer = setTimeout(() => {
       window.print();
-    }, 1000);
+    }, 2500);
     
     return () => clearTimeout(timer);
   }, []);
