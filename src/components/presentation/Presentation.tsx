@@ -33,7 +33,6 @@ const slideComponents = [
   
   // Close Sequence
   Slides.SlideCultureCoach,
-  Slides.Slide12ProvenResults,
   Slides.Slide13Implementation,
   Slides.SlideThankYou,
 ];

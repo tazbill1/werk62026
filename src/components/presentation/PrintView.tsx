@@ -9,7 +9,6 @@ const slideComponents = [
   Slides.SlideWorkforceWants,
   Slides.SlideWhyEngage,
   Slides.SlideSolution,
-  Slides.Slide12ProvenResults,
   Slides.Slide15EmotionalCheckins,
   Slides.Slide16Dashboard,
   Slides.Slide17Gamification,
