@@ -25,6 +25,9 @@ const slideComponents = [
   Slides.SlideThankYou,
 ];
 
+// Dense slides built small for on-screen fit get a closer zoom in print.
+const compactSlides = new Set<unknown>([Slides.SlideCostComparison]);
+
 // Each slide renders on a fixed desktop-sized canvas, then is scaled to fill
 // one landscape letter page, so the print matches what's shown on screen.
 export const PrintView = () => (
@@ -33,7 +36,7 @@ export const PrintView = () => (
       <div className="print-container">
         {slideComponents.map((SlideComponent, index) => (
           <div key={index} className="print-slide">
-            <div className="print-canvas">
+            <div className={`print-canvas${compactSlides.has(SlideComponent) ? ' print-canvas-zoom' : ''}`}>
               <SlideComponent />
             </div>
           </div>
