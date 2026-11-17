@@ -246,22 +246,22 @@
   height: 100dvh;
 }
 
-/* Print layout: fixed 1440x1113 canvas scaled onto 11x8.5in pages */
+/* Print layout: fixed 1600x900 canvas scaled onto 16:9 widescreen pages */
 .print-page { background: hsl(var(--muted)); padding: 32px 0; }
 .print-slide {
-  width: 11in; height: 8.5in; margin: 0 auto 32px;
+  width: 13.333in; height: 7.5in; margin: 0 auto 32px;
   overflow: hidden; position: relative;
   box-shadow: 0 10px 30px rgb(0 0 0 / 0.25);
 }
 .print-canvas {
-  width: 1440px; height: 1113px;
-  transform: scale(0.7333); transform-origin: top left;
+  width: 1600px; height: 900px;
+  transform: scale(0.8); transform-origin: top left;
   position: absolute; top: 0; left: 0;
 }
 .print-canvas > * { width: 100%; height: 100%; }
 
 @media print {
-  @page { size: 11in 8.5in; margin: 0; }
+  @page { size: 13.333in 7.5in; margin: 0; }
   html, body {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
