@@ -5,7 +5,7 @@ import { Heart, Trophy, BarChart3, MessageSquare, Gift, Clock, Bot, UserCheck, M
 export const SlideSolution = () => {
   const features = [
     { icon: Heart, title: 'Emotional Check-Ins', desc: 'Catch disengagement before resignation' },
-    { icon: BarChart3, title: 'Manager Dashboard', desc: 'Real-time actionable insights' },
+    { icon: BarChart3, title: 'Actionable Data', desc: 'Smarter People Decisions' },
     { icon: Trophy, title: 'Smart Gamification', desc: 'Challenges that drive results' },
     { icon: MessageSquare, title: 'Personalized Recognition', desc: 'Tailored to individual motivators' },
     { icon: Gift, title: 'Meaningful Rewards', desc: 'Incentives that actually matter' },
