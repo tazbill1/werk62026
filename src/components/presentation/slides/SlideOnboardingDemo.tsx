@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SlideHeader } from "../SlideHeader";
 
 const C = {
   midnight: "#1E2248",
@@ -413,61 +413,66 @@ const descriptions: Record<string, string> = {
   notifications: "SMS and email examples: short punchy texts, rich email with progress table.",
 };
 
+const whyMatters = [
+  "First 90 days determine long-term retention",
+  "Early turnover is the most expensive turnover",
+  "Culture is absorbed immediately",
+  "Poor onboarding looks like \"bad hiring\" but is often a process failure",
+  "Strong onboarding accelerates productivity",
+];
+const costOfWeak = [
+  "Increased 90-day turnover",
+  "Slower ramp to performance",
+  "Lower early engagement",
+  "Reduced confidence in leadership",
+  "Margin loss in fixed ops and sales",
+];
+
 export const SlideOnboardingDemo = () => {
-  const [active, setActive] = useState("phases");
-  const Screen = SCREEN_MAP[active];
   return (
     <div className="relative w-full h-full bg-background flex items-center justify-center overflow-auto py-8">
-      <div className="w-full max-w-5xl px-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-start">
-        {/* Left: title + nav */}
+      <SlideHeader />
+      <div className="w-full max-w-6xl px-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 items-center">
         <div>
           <div className="mb-6">
             <div className="inline-flex items-center gap-2 text-primary mb-2">
               <span className="text-sm font-semibold uppercase tracking-wider">GuideMe</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Structured 90-Day <span className="text-gradient-werk">Onboarding</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+              Why <span className="text-gradient-werk">Onboarding</span> Matters
             </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Interactive demo — tap any screen to preview the experience.
+            <p className="mt-3 text-lg text-muted-foreground">
+              In a dealership, the first 90 days make or break every hire.
             </p>
           </div>
-
-          <div className="space-y-4">
-            {groups.map(g => (
-              <div key={g.label}>
-                <div className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">{g.label}</div>
-                <div className="flex flex-wrap gap-2">
-                  {g.ids.map(id => {
-                    const s = screens.find(x => x.id === id)!;
-                    const isActive = active === id;
-                    return (
-                      <button
-                        key={id}
-                        onClick={() => setActive(id)}
-                        className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${
-                          isActive
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-card border border-border text-muted-foreground hover:text-foreground"
-                        }`}
-                      >
-                        {s.label}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="bg-card rounded-2xl p-5 border shadow-sm">
+              <h3 className="font-bold text-foreground mb-3">Why It Matters</h3>
+              <ul className="space-y-2">
+                {whyMatters.map(p => (
+                  <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 shrink-0" />{p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-card rounded-2xl p-5 border shadow-sm">
+              <h3 className="font-bold text-foreground mb-3">Cost of Weak Onboarding</h3>
+              <ul className="space-y-2">
+                {costOfWeak.map(p => (
+                  <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-destructive mt-1.5 shrink-0" />{p}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-
-          <p className="mt-6 text-xs text-muted-foreground italic max-w-md leading-relaxed">
-            {descriptions[active]}
+          <p className="mt-5 text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">The GuideMe dashboard</span> shows managers every new hire's 90-day progress, pending approvals, and who's falling behind.
           </p>
         </div>
-
-        {/* Right: phone */}
         <div>
-          <Screen />
+          <MgrDash />
         </div>
       </div>
     </div>

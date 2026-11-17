@@ -27,8 +27,7 @@ export const Slide16Dashboard = () => {
               <span className="text-gradient-werk">Reporting</span>
             </h2>
             <p className="mt-6 text-xl text-muted-foreground">
-              Everything you need to know about your team — at a glance. 
-              No digging through spreadsheets.
+              Everything you need to know about your team — at a glance.
             </p>
             
             <div className="mt-8 grid grid-cols-2 gap-4">
