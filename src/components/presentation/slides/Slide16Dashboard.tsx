@@ -24,7 +24,7 @@ export const Slide16Dashboard = () => {
               <span className="text-sm font-semibold uppercase tracking-wider">For Managers</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-              Dashboard & <span className="text-gradient-werk">Reporting</span>
+              <span className="text-gradient-werk">Reporting</span>
             </h2>
             <p className="mt-6 text-xl text-muted-foreground">
               Everything you need to know about your team — at a glance. 
@@ -62,20 +62,27 @@ export const Slide16Dashboard = () => {
             <div className="bg-card rounded-3xl p-6 border shadow-xl">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="font-semibold text-foreground">Team Overview</h3>
-                <span className="text-xs text-muted-foreground">Last 7 days</span>
+                <span className="text-xs text-muted-foreground">Last 30 days</span>
               </div>
               
               {/* Mock chart */}
-              <div className="h-40 flex items-end gap-2 mb-6">
-                {[65, 72, 68, 75, 80, 78, 82].map((height, index) => (
+              <div className="h-40 flex items-end gap-[3px] mb-6">
+                {[61, 58, 64, 62, 67, 65, 69, 66, 71, 68, 73, 70, 74, 72, 76, 73, 77, 75, 79, 76, 80, 78, 81, 79, 83, 80, 84, 82, 85, 88].map((height, index) => (
                   <motion.div
                     key={index}
                     initial={{ height: 0 }}
                     animate={{ height: `${height}%` }}
-                    transition={{ delay: 0.5 + index * 0.05, duration: 0.5 }}
-                    className="flex-1 gradient-werk rounded-t-lg"
+                    transition={{ delay: 0.5 + index * 0.012, duration: 0.4 }}
+                    className="flex-1 gradient-werk rounded-t-sm"
                   />
                 ))}
+              </div>
+
+              {/* Range markers */}
+              <div className="flex items-center justify-between text-[10px] text-muted-foreground -mt-4 mb-6">
+                <span>30 days ago</span>
+                <span className="font-medium text-foreground/70">30-day range</span>
+                <span>Today</span>
               </div>
               
               {/* Alerts section */}
